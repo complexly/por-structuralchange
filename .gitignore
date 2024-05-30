@@ -1,0 +1,6 @@
+.DS_Store
+*.eps
+*.pdf
+
+_archive/
+output/
