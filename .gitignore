@@ -1,7 +1,10 @@
 .DS_Store
 *.eps
 *.pdf
+*.npy
 TODO.txt
+
+.ipynb_checkpoints/
 _archive/
 output/
 .venv/
