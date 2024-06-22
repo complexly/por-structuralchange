@@ -10,3 +10,5 @@ output/
 .venv/
 analyses_unused/
 tools_unused/
+
+countryData.mat
