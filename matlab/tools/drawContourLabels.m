@@ -5,7 +5,7 @@ iContour   = 1;
 currentCol = 1;
 for iContour = 1:length(sList)
    % Parse contourMatrix
-   contourLevel = contourMatrix(1,currentCol)
+   contourLevel = contourMatrix(1,currentCol);
    nPoints      = contourMatrix(2,currentCol);
    Xpoints      = contourMatrix(1,currentCol+1 : currentCol+nPoints);
    Ypoints      = contourMatrix(2,currentCol+1 : currentCol+nPoints);
