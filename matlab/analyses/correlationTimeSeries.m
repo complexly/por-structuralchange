@@ -25,7 +25,6 @@ end
 % Additional or customized appearance parameters
 fontSize = 16;
 braceLineWidth = 1.5;
-y0_axes = 0.06;
 tickLabels = {'Diversity $d$','Fitness','$X_1 d$','Prod. Ability','TCS entropic','$A$','$A^M$','$A^C$', 'ECI','$b$ (ECI*)','$b^M$ (ECI*$^M$)','$b^C$ (ECI*$^C$)','$X_2 / \sqrt{d}$', 'GENEPY', 'Collective knowhow'};
 
 year_list = [1966:10:2016];
@@ -53,8 +52,6 @@ for iyr = 1:n_years
    if iyr ~= n_years
       delete(hColorbar)
    else
-      axes_pos = get(gca, 'position');
-      %set(hColorbar, 'Position',[0.9145    y0_axes    0.0238    axes_pos(4)])
       set(hColorbar, 'Position',[0.9157    0.2557    0.01    0.4962], 'FontSize',fontSize)
    end
    
@@ -66,8 +63,7 @@ for iyr = 1:n_years
    set(gca, 'YTickLabel',[])
    set(gca, 'FontSize',fontSize)
    set(gca,'TickLabelInterpreter','latex')
-   hTitle = title(num2str(yr), 'FontWeight','normal');
-   %hTitle.Position = [8, -3.8, 0]; % lower it
+   title(num2str(yr), 'FontWeight','normal');
 
    % Draw braces
    if iyr == 1
@@ -87,9 +83,7 @@ for iyr = 1:n_years
       % Draw brace labels
       xNudge  = -3;
       yLabel1 = (braceY1 + braceY2)/2;
-      yLabel2 = (braceY2 + braceY3)/2;
       text(braceX0+xNudge, yLabel1, 'Diversity-like', 'FontSize',fontSize, 'HorizontalAlignment','right')
-      %text(braceX0+xNudge, yLabel2, {'ECI','composition-like'}, 'FontSize',fontSize, 'HorizontalAlignment','left')
       text(-16.5,   10.4953, {'ECI','Composition-like'}, 'FontSize',fontSize, 'HorizontalAlignment','left')
    end
 
@@ -98,18 +92,8 @@ for iyr = 1:n_years
       set(gca, 'CLim',[0 1])
       nColors    = 100;
       cmapName   = 'parula';
-      firstColor = [1 1 1];
-      lastColor  = MatlabColors(7);
-      %lastColor  = MatlabColors(6);
       cmap       = makeColorMap(nColors, cmapName);
-      %cmap       = makeColorMap(nColors, firstColor, lastColor);
       colormap(cmap);
-      % nColors      = 100;
-      % dataLimits   = [0 1];
-      % displayLimts = [0 1];
-      % cmap         = parula(nColors);
-      % colorTick    = [0 : 0.1 : 1];
-      %h = setColorBar(gca,cmap,dataLimits,displayLimts,colorTick);
    end
 
 end
@@ -130,10 +114,6 @@ if pp.saveFigures
    save_image(h, fileName, savemode)
 end
 
-
-
-
-
 end
 
 
@@ -144,8 +124,6 @@ T_mod = T(T.year==yr,:); %get yr data
 T_mod = unstack(T_mod, 'corrcoef', 'metric2'); %form a matrix
 
 labels = [
-   %     {'year'        }
-   %     {'metric1'     }
    {'kc'          }
    {'fitness_year'}
    {'x1d'         }
@@ -155,17 +133,12 @@ labels = [
    {'avgrca_m'    }
    {'avgrca_c'    }
    {'eci_year'    }
-   %    {'eci'         }
    {'proj_p'      }
    {'proj_m'      }
    {'proj_c'      }
    {'x2divsqrtd'  }
    {'genepy'      }
    {'fe'          }
-   %     {'fitness_v2'  }
-   %     {'bin'         }
-   %     {'xc1'         }
-   %     {'xc2'         }
    ];
 
 % Set metric1 as the row names
@@ -176,10 +149,4 @@ T_mod = T_mod(labels, labels);
 
 % Convert to matrix
 corr_matrix = table2array(T_mod);
-end
-
-
-
-function plot_matrix()
-;
 end

@@ -7,7 +7,6 @@ announceFunction()
 %========================================================================%
 % Times at which to plot phase trajectories
 t         = [linspace(0,0.09,10), logspace(-1,1,50)]';
-%t         = linspace(0,10,100)';
 
 % Set the time scales and eigenvalues
 delta_t   = 25;
@@ -17,8 +16,6 @@ lambda2   = exp(-delta_t / tau2);
 lambda3   = exp(-delta_t / tau3);
 
 % Set the angle between eigenvectors
-%eigenvectorAngle = acosd( V(:,1)' * V(:,2) / (norm(V(:,1)) * norm(V(:,2))) );
-%eigenvectorAngle = acosd(0.03466);
 eigenvectorAngle  = 64;
 
 % Set start points around the perimeter of the plot
@@ -132,8 +129,6 @@ plot(0,0,'ko', 'MarkerSize',centerMarkerSize, 'LineWidth',centerLineWidth, 'Mark
 hold off
 
 % Axis labels
-%text(1.08, 0, '2nd eigenmode', 'Color','k', 'FontSize',fontSize)
-%text(x_3rd(1)-0.02, y_3rd(1)+0.09, '3rd eigenmode', 'Color','k', 'FontSize',pp.fontSize, 'Rotation',eigenvectorAngle, 'FontSize',fontSize)
 text(1.08,        0, '2nd eigenvector v_2', 'Color','k', 'FontSize',fontSize)
 text(0.1274, 0.3720, '3rd eigenvector v_3', 'Color','k', 'FontSize',pp.fontSize, 'Rotation',eigenvectorAngle, 'FontSize',fontSize)
 
@@ -144,8 +139,6 @@ text(-xECI,yECI,{'ECI* < 0','c_3 > 0'},'HorizontalAlignment','center', 'Backgrou
 text(+xECI,yECI,{'ECI* > 0','c_3 > 0'},'HorizontalAlignment','center', 'BackgroundColor',positiveBackgroundColor, 'FontSize',fontSize)
 text(-xECI,-yECI,{'ECI* < 0','c_3 < 0'},'HorizontalAlignment','center', 'BackgroundColor',negativeBackgroundColor, 'FontSize',fontSize)
 text(+xECI,-yECI,{'ECI* > 0','c_3 < 0'},'HorizontalAlignment','center', 'BackgroundColor',positiveBackgroundColor, 'FontSize',fontSize)
-%text(-0.4,0.15,{'ECI* < 0'},'HorizontalAlignment','center', 'BackgroundColor',negativeBackgroundColor, 'FontSize',fontSize)
-%text(+0.4,0.15,{'ECI* > 0'},'HorizontalAlignment','center', 'BackgroundColor',positiveBackgroundColor, 'FontSize',fontSize)
 
 % Refine
 set(gca, 'Box','off')
@@ -153,15 +146,10 @@ set(gca, 'Visible','off')
 set(gca, 'XLim',xLim)
 set(gca, 'YLim',yLim)
 set(gca, 'DataAspectRatio', [1 1 1])
-%set(gca, 'XAxisLocation','origin')
 set(gca, 'XTick',[])
 set(gca, 'YTick',[])
 set(gca, 'XColor','w', 'YColor','w')
-%consistentTickPrecision(gca,'x',1)
-%consistentTickPrecision(gca,'y',1)
 set(gca, 'FontSize',pp.fontSize)
-%xlabel('2nd eigenmode (PCI)', 'Color','k', 'Position',[1.448980545511051 0.0517006802721085 -1])
-%ylabel('3rd eigenmode',       'Color','k', 'Rotation',eigenvectorAngle, 'Position',[0.31700680272108855 0.6870757836062906 -1])
 
 % Save
 if pp.saveFigures
@@ -172,6 +160,3 @@ if pp.saveFigures
    savemode  = 'painters_pdf';
    save_image(h, fileName, savemode)
 end
-
-
-

@@ -12,12 +12,6 @@ load('./save/countryData.mat')
 ECI              = countryData.ECI;
 ECIstar          = countryData.ECIstar;
 
-rho_pearson = corr(ECIstar,ECI, 'type','pearson');
-rho_spearman = corr(ECIstar,ECI, 'type','spearman');
-%Yang gets 0.919 and 0.902, which is a little different from what I get.
-%rho_pearson  = 0.919;
-%rho_spearman = 0.902;
-
 %========================================================================%
 % Plot
 %========================================================================%
@@ -54,15 +48,8 @@ hold off
 % Refine
 set(gca, 'Box','on')
 set(gca, 'Layer', 'top')
-%set(gca, 'XScale','log')
-%set(gca, 'YScale','log')
 set(gca, 'XLim',xLim)
 set(gca, 'YLim',yLim)
-%set(gca, 'DataAspectRatio', [1 1 1])
-%set(gca, 'XTick',[])
-%set(gca, 'YTick',[])
-%consistentTickPrecision(gca,'x',1)
-%consistentTickPrecision(gca,'y',1)
 set(gca, 'FontSize',fontSize)
 xlabel('ECI')
 ylabel('Composition coordinate b (ECI*)')
@@ -76,6 +63,3 @@ if pp.saveFigures
    savemode  = 'painters_pdf';
    save_image(h, fileName, savemode)
 end
-
-
-
