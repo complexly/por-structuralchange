@@ -16,32 +16,22 @@ fileContents = textscan(fid,'%s%s%s%f%f%f%f', 'Headerlines',1, 'Delimiter','\t',
 fclose(fid);
 
 SITCcode_3d = fileContents{1};
-nodeColor   = fileContents{2};
+% nodeColor   = fileContents{2};
 nodeNames   = fileContents{3};
 node_xloc   = fileContents{4};
 node_yloc   = fileContents{5};
 node_PCI    = fileContents{6};
-node_vec3   = fileContents{7};
+% node_vec3   = fileContents{7};
 
 n           = length(SITCcode_3d);
 A           = mincop_proximity;
 groupLabels = ones(n,1);
 nodeSizes   = ones(n,1);
-nGroups     = numel(unique(nodeSizes));
+% nGroups     = numel(unique(nodeSizes));
 
 % Add tiny amount to all edge weights to avoid absolute zeros (which
 % screw up color mapping)
 A = A + 1e-6;
-
-%====================================================================%
-% Generate fake network
-%====================================================================%
-% n = 35;
-% A = wblrnd(1,0.6, [n n]);
-% nodeNames = num2str([1:n]');
-% nGroups = 5;
-% groupLabels = randi(5,[n 1]);
-% nodeSizes = sum(A);
 
 
 %====================================================================%
@@ -81,16 +71,13 @@ nodeSizeFunction    = datamapping(mappingType, dataValues, functionValues, expon
 markerLineWidth     = 0.5;
 
 % Node face color mapping
-Mcolors             = MatlabColors;
-nodeFaceColorMap    = 0.55*[1 1 1];     %Mcolors(1:nGroups,:) 0.5*[1 1 1]
+% Mcolors             = MatlabColors;
+nodeFaceColorMap    = 0.55*[1 1 1];
 
 cmap_anomaly = b2r(min(node_PCI),max(node_PCI));
-%cmap_anomaly = b2r(min(node_vec3),max(node_vec3));
-
-
 
 % Node edge color mapping
-nodeEdgeColor       = [1 1 1]; %Mcolors(5,:) w
+nodeEdgeColor       = [1 1 1];
 nodeEdgeOpacity     = 1;
 
 % Node names
@@ -126,16 +113,14 @@ edgeColorFunction   = datamapping(mappingType, dataValues, functionValues, expon
 nColors             = 100;
 
 edgeColorMap        = makeColorMap(nColors, 0.5*[1 1 1], [1 1 1]);
-%edgeColorMap        = makeColorMap(nColors, 'cool');   %autumn spring summer winter copper
 edgeColorMap        = edgeColorMap(end:-1:1, :);
-
 
 
 %====================================================================%
 % Pre-compute appearance mappings
 %====================================================================%
 % Compute node mappings
-nodeFaceColorList = nodeFaceColorMap( groupLabels, : );
+% nodeFaceColorList = nodeFaceColorMap( groupLabels, : );
 nodeSizeList      = nodeSizeFunction( nodeSizes ) * markerBaseSize;
 
 % Compute edge mappings
@@ -143,8 +128,6 @@ edgeWidthMatrix   = edgeWidthFunction( A ) * edgeBaseWidth;
 edgeOpacityMatrix = edgeOpacityFunction( A );
 edgeColorFactors  = edgeColorFunction( A );
 edgeColorIndices  = ceil(nColors * edgeColorFactors);
-
-
 
 
 %====================================================================%
@@ -230,11 +213,9 @@ if drawLinks
       ytarget = ylocs(iTarget);
       
       % Draw edge
-      %iEdge
       edgeWidth   = edgeWidthMatrix(iTarget,iSource);
       edgeOpacity = edgeOpacityMatrix(iTarget,iSource);
       edgeColor   = edgeColorMap(edgeColorIndices(iTarget,iSource), :);
-      %pause
       patchline([xsource xtarget],[ysource ytarget], 'LineWidth',edgeWidth, 'EdgeAlpha',edgeOpacity, 'EdgeColor',edgeColor);
       
       % Draw arrow
@@ -250,8 +231,6 @@ end
 
 % Plot nodes
 theNodes = scatter(xlocs,ylocs,nodeSizeList,0.04*ones(n,1),'filled');
-%theNodes = scatter(xlocs,ylocs,nodeSizeList,node_PCI,'filled');
-%theNodes = scatter(xlocs,ylocs,nodeSizeList,node_vec3,'filled');
 set(theNodes, 'Marker',nodeMarker, 'LineWidth',markerLineWidth, 'MarkerEdgeColor',nodeEdgeColor, 'MarkerEdgeAlpha',nodeEdgeOpacity)
 colormap(cmap_anomaly)
 hold off
@@ -270,14 +249,9 @@ end
 
 % Refine
 set(gca, 'Box','on')
-%set(gca, 'XLim',xLim)
-%set(gca, 'YLim',yLim)
 set(gca, 'DataAspectRatio', [1 1 1])
-%set(gca, 'XTick',[])
-%set(gca, 'YTick',[])
 set(gca, 'FontSize',fontSize)
 set(gca, 'CLim',[min(node_PCI) max(node_PCI)])
-
 set(gca, 'Visible','off')
 
 % Plot colorbar
@@ -286,12 +260,9 @@ set(gca, 'Visible','off')
 %opacityTicks = edgeOpacityFunction(dataTicks);
 %drawColorBar(gcf,dataTicks,colorTicks,opacityTicks,edgeColorMap)
 
-
-
 % Save
 if pp.saveFigures
    set(gca, 'Visible','off')
-   
    h         = gcf;
    folder    = pp.outputFolder;
    fileName  = 'productSpace_firstEV';
@@ -299,10 +270,7 @@ if pp.saveFigures
    savemode  = '2014b';
    %save_image(h, fileName, savemode)
    
-   %set(gca, 'Visible','on')
-   
-   % SAVE MANUALLY.  Not sure why this is necessary.
+   % SAVE MANUALLY. (Not sure why this is necessary.)
 end
 end
 
-dumpvars()

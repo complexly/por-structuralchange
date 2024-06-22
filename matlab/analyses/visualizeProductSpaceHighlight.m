@@ -308,4 +308,3 @@ if pp.saveFigures
 end
 end
 
-dumpvars()

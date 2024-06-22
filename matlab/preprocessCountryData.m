@@ -69,4 +69,3 @@ file_name = fullfile('./save/', mat_file_name);
 save(file_name,'countryData')
 
 
-dumpvars()

@@ -173,4 +173,3 @@ if pp.saveFigures
    save_image(h, fileName, savemode)
 end
 
-dumpvars()

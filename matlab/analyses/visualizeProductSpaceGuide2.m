@@ -347,4 +347,3 @@ if pp.saveFigures
    % SAVE MANUALLY as eps then convert to pdf.  Not sure why manual save is necessary.
 end
 
-dumpvars()

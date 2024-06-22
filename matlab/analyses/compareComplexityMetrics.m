@@ -238,4 +238,3 @@ if false
    end
 end
 
-dumpvars()
