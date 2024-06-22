@@ -251,10 +251,6 @@ set(gca, 'ClippingStyle','rectangle'); %clips line at axes borders
 % Plot
 hold on
 h_pcolor = pcolor(Zcenters, ECIcenters, binCounts');
-%plot(X_indicator(1),   Y_indicator(1), 'ko', 'MarkerFaceColor','k')
-%plot(X_indicator(end), Y_indicator(end), 'ko', 'MarkerFaceColor','k')
-%plot(X_upperBound,      Y_upperBound, 'k', 'LineWidth',2)
-%plot(X_lowerBound,      Y_lowerBound, 'k', 'LineWidth',2)
 fill(XV, YV, bandColor, 'FaceAlpha',bandAlpha, 'LineStyle',bandLineStyle, 'EdgeColor',bandLineColor, 'LineWidth',bandLineWidth)
 set(h_pcolor, 'LineStyle','none')
 plot(xLim, [0 0], 'k--')
@@ -277,13 +273,8 @@ colorbar()
 % Refine
 set(gca, 'Box','on')
 set(gca, 'Layer', 'top')
-%set(gca, 'XScale','log')
-%set(gca, 'YScale','log')
 set(gca, 'XLim',xLim)
 set(gca, 'YLim',yLim)
-%set(gca, 'DataAspectRatio', [1 1 1])
-%set(gca, 'XTick',[])
-%set(gca, 'YTick',[])
 consistentTickPrecision(gca,'y',1)
 set(gca, 'FontSize',fontSize)
 xlabel('Average ability coordinate A')
@@ -306,12 +297,7 @@ end
 % Plot GDP per capita
 %========================================================================%
 % Color map parameters
-nColors          = 100;
-firstColor       = [1 1 1];
-lastColor        = MatlabColors(7);
-%cmap       = makeColorMap(nColors, firstColor, lastColor);
 cmap             = 'parula';
-% levelList        = log10([300 1000 2000 3000 6000 10000 20000 30000]);
 levelList        = log10([300 1000 2000 3000 6000 10000 20000 30000]);
 contourColor     = 'w';
 contourLineWidth = 0.75;
@@ -344,7 +330,6 @@ end
 
 % Set colors
 colormap(cmap)
-%colorDataLimits = [-10 140];
 
 % Make colorbar
 hColorBar = colorbar();
@@ -354,13 +339,8 @@ set(hColorBar, 'YTickLabel',{'$300' '$1000' '$3000' '$10000' '$30000'})
 % Refine
 set(gca, 'Box','on')
 set(gca, 'Layer', 'top')
-%set(gca, 'XScale','log')
-%set(gca, 'YScale','log')
 set(gca, 'XLim',xLim)
 set(gca, 'YLim',yLim)
-%set(gca, 'DataAspectRatio', [1 1 1])
-%set(gca, 'XTick',[])
-%set(gca, 'YTick',[])
 consistentTickPrecision(gca,'y',1)
 set(gca, 'FontSize',fontSize)
 xlabel('Average ability coordinate A')
@@ -384,14 +364,8 @@ end
 % Plot diversity
 %========================================================================%
 % Color map parameters
-nColors    = 100;
-firstColor = [1 1 1];
-lastColor  = [40 84 130]/255;%MatlabColors(7);
-%cmap       = makeColorMap(nColors, firstColor, lastColor);
-%cmap       = diversityColorMap();
 cmap       = 'parula';
 colorDataLimits = [0 max(meanDiversity(:))];
-%contourLevelStep = 10;
 levelList        = log10([3 6 10 20 30 60 100]);
 contourColor  = 'w';
 
@@ -434,13 +408,8 @@ set(hColorBar, 'YTickLabel',[1 3 10 30 100])
 % Refine
 set(gca, 'Box','on')
 set(gca, 'Layer', 'top')
-%set(gca, 'XScale','log')
-%set(gca, 'YScale','log')
 set(gca, 'XLim',xLim)
 set(gca, 'YLim',yLim)
-%set(gca, 'DataAspectRatio', [1 1 1])
-%set(gca, 'XTick',[])
-%set(gca, 'YTick',[])
 consistentTickPrecision(gca,'y',1)
 set(gca, 'FontSize',fontSize)
 xlabel('Average ability coordinate A')
@@ -456,89 +425,3 @@ if pp.saveFigures
    savemode  = 'epsc';
    save_image(h, fileName, savemode)
 end
-
-
-
-
-%========================================================================%
-% Plot gini
-%========================================================================%
-% Color map parameters
-nColors    = 100;
-firstColor = [1 1 1];
-lastColor  = [40 84 130]/255;%MatlabColors(7);
-%cmap       = makeColorMap(nColors, firstColor, lastColor);
-%cmap       = diversityColorMap();
-cmap       = 'parula';
-colorDataLimits = [0 max(meanDiversity(:))];
-contourLineWidth     = 0.75;
-%contourLevelStep = 10;
-levelList        = log10([3 6 10 20 30 60 100]);
-contourColor  = 'w';
-
-
-% Setup figure
-newFigure( [mfilename,'.gini'] );
-clf
-figpos = get(gcf, 'Position');
-set(gcf, 'Position',[figpos(1) figpos(2) 560   420])
-
-% Setup axes
-axes('Position',[0.15    0.15    0.7    0.7])
-set(gca, 'ClippingStyle','rectangle'); %clips line at axes borders
-
-% Plot
-hold on
-h_pcolor = pcolor(Zcenters, ECIcenters, log(1-meanGini)');
-set(h_pcolor, 'LineStyle','none')
-plot(xLim, [0 0], 'k--')
-%[contourMatrix,hContour] = contour(Xsample,Ysample,logDiversityHat, 'LineWidth',isolineWidth, 'LineColor',contourColor, 'LevelList',levelList);
-hold off
-
-% Contour labels
-% sList   = [nan nan 0.45 0.45 0.45 0.45 0.44];
-% hLabels = drawContourLabels(contourMatrix,sList);
-% for iLabel = 1:length(hLabels)
-%    set(hLabels(iLabel), 'BackgroundColor','none')
-%    contourLevel = str2num( get(hLabels(iLabel), 'String') );
-%    set(hLabels(iLabel), 'String',num2str( round(10.^contourLevel) ))
-% end
-
-% Set colors
-%colormap(cmap)
-%set(gca, 'CLim',colorDataLimits)
-
-% Make colorbar
-hColorBar = colorbar();
-%set(hColorBar, 'YTick',log10([1 3 10 30 100]))
-%set(hColorBar, 'YTickLabel',[1 3 10 30 100])
-
-% Refine
-set(gca, 'Box','on')
-set(gca, 'Layer', 'top')
-%set(gca, 'XScale','log')
-%set(gca, 'YScale','log')
-set(gca, 'XLim',xLim)
-set(gca, 'YLim',yLim)
-%set(gca, 'DataAspectRatio', [1 1 1])
-%set(gca, 'XTick',[])
-%set(gca, 'YTick',[])
-consistentTickPrecision(gca,'y',1)
-set(gca, 'FontSize',fontSize)
-xlabel('Average ability coordinate A')
-ylabel('Composition coordinate b (ECI*)')
-title('Other diversities: 1-Gini coeff.','FontWeight','normal')
-
-% Save
-if pp.saveFigures
-   h         = gcf;
-   folder    = pp.outputFolder;
-   fileName  = 'giniHeatMap';
-   fileName  = fullfile(folder, fileName);
-   savemode  = 'epsc';
-   save_image(h, fileName, savemode)
-end
-
-
-
-

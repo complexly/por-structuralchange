@@ -27,11 +27,6 @@ end
 
 
 
-
-
-% Try augmenting this with some country lists
-
-
 %========================================================================%
 % Set analysis parameters
 %========================================================================%
@@ -39,9 +34,6 @@ nbins_A     = 10; %10
 nbins_ECI   = 12; %12
 minBinCount = 0;  %6
 minAveSpeed = 0.07;
-
-
-
 
 
 %========================================================================%
@@ -55,12 +47,6 @@ A_list               = [];
 ECI_list             = [];
 dA_list              = [];
 dECI_list            = [];
-
-%Aseries_cell         = {};
-%ECIseries_cell       = {};
-%diversitySeries_cell = {};
-%gdpSeries_cell       = {};
-%giniSeries_cell      = {};
 for c = 1:nRegions
    % For this region obtain the time series of Z and ECI
    thisRegion       = uniqueRegionCodes{c};
@@ -68,9 +54,6 @@ for c = 1:nRegions
    tableSubset      = sortrows(tableSubset, 'years');
    AtimeSeries_c    = tableSubset.A;
    ECItimeSeries_c  = tableSubset.ECIstar;
-   %diversityTimeSeries_c = tableSubset.diversity;
-   %gdpTimeSeries_c       = tableSubset.GDPpc;
-   %giniTimeSeries_c      = tableSubset.gini;
    
    % Obtain the changes in these time series over next Delta_t years
    AtimeSeries1_c   = AtimeSeries_c(1 : end-Delta_t);
@@ -85,13 +68,6 @@ for c = 1:nRegions
    ECI_list         = [ECI_list;  ECItimeSeries1_c];
    dA_list          = [dA_list;   dA_c];
    dECI_list        = [dECI_list; dECI_c];
-
-   % Other: Record for other analyses
-   %Aseries_cell         = [Aseries_cell;   AtimeSeries_c  ];
-   %ECIseries_cell       = [ECIseries_cell; ECItimeSeries_c];
-   %diversitySeries_cell = [diversitySeries_cell; diversityTimeSeries_c];
-   %gdpSeries_cell       = [gdpSeries_cell; gdpTimeSeries_c];
-   %giniSeries_cell      = [giniSeries_cell; giniTimeSeries_c];
 end
 
 
@@ -124,7 +100,6 @@ binCounts = binCounts(1:end-1,1:end-1);
 mean_dA(binCounts <= minBinCount)   = nan;
 mean_dECI(binCounts <= minBinCount) = nan;
 
-% Compute the standard deviation of velocity in each bin
 
 
 %========================================================================%
@@ -144,15 +119,6 @@ pointIndices = convhull(A_below, ECI_below);
 %========================================================================%
 % Define three regions
 %========================================================================%
-%Xregion1 = [0 1 0.4 0];
-%Yregion1 = [-1.5 0 0 -0.6];
-
-%Xregion2 = [0.4 1 1 0.4];
-%Yregion2 = [0 0 0.6 0.6];
-
-%Xregion3 = [0 0.4 0.4 0];
-%Yregion3 = [-0.6 0 0.6 1];
-
 Xregion1 = [ 0    1.1 1.1  0.4  0  ];
 Yregion1 = [-1.5 -1.5 0    0   -0.6];
 
@@ -161,7 +127,6 @@ Yregion2 = [0   0   1   1  ];
 
 Xregion3 = [ 0   0.4 0.4 0];
 Yregion3 = [-0.6 0   1   1];
-
 
 
 
@@ -258,18 +223,15 @@ arrowColor       = 'k';
 arrowLineWidth   = 1.0;
 
 region1Color     = 0.9*[0 0 1];
-%region1Color     = 1*[1 1 1];
 region1Alpha     = 0.12;
 region2Color     = 0.9*[1 0 0];
-%region2Color     = 1*[1 1 1];
 region2Alpha     = 0.12;
 region3Color     = 0.9*[1 1 0];
-%region3Color     = 1*[1 1 1];
 region3Alpha     = 0.12;
 region2TextColor = [253 224 224]/255;
 region3TextColor = [252 252 224]/255;
 
-lineDensity      = 8;  %8
+lineDensity      = 8;
 lineWidth        = 0.5;
 lineColor        = 'b';
 arrowSetting     = 'arrows';  %arrows noarrows
@@ -312,15 +274,8 @@ hold off
 % Refine
 set(gca, 'Box','on')
 set(gca, 'Layer', 'top')
-%set(gca, 'XScale','log')
-%set(gca, 'YScale','log')
 set(gca, 'XLim',xLim)
 set(gca, 'YLim',yLim)
-%set(gca, 'DataAspectRatio', [1 1 1])
-%set(gca, 'XTick',[])
-%set(gca, 'YTick',[])
-%consistentTickPrecision(gca,'x',1)
-%consistentTickPrecision(gca,'y',1)
 set(gca, 'FontSize',fontSize)
 xlabel('Average ability coordinate A')
 ylabel('Composition coordinate b (ECI*)')
@@ -353,9 +308,7 @@ plot(xLim,[0 0],'k--')
 [linePoints, arrowPoints] = streamslice(Acenters, ECIcenters, mean_dA', mean_dECI', lineDensity, arrowSetting);
 hstreams = streamslice(Acenters, ECIcenters, mean_dA', mean_dECI', lineDensity,arrowSetting);
 set(hstreams, 'LineWidth',lineWidth, 'Color',lineColor)
-%streamslicePlus(Acenters, ECIcenters, mean_dA', mean_dECI', speedFitObj, lineDensity, speedScale)
 isoTimePoints(Acenters, ECIcenters, mean_dA', mean_dECI', speedFitObj, lineDensity, speedScale)
-%quiver(Acenters, ECIcenters, mean_dA', mean_dECI', arrowScaling, 'Color',arrowColor, 'LineWidth',arrowLineWidth)
 
 % Main diagonal band
 fill(XV, YV, bandColor, 'FaceAlpha',bandAlpha, 'LineStyle',bandLineStyle, 'EdgeColor',bandLineColor, 'LineWidth',bandLineWidth)
@@ -364,18 +317,13 @@ hold off
 % Refine
 set(gca, 'Box','on')
 set(gca, 'Layer', 'top')
-%set(gca, 'XScale','log')
-%set(gca, 'YScale','log')
 set(gca, 'XLim',xLim)
 set(gca, 'YLim',yLim)
-%set(gca, 'DataAspectRatio', [1 1 1])
 %set(gca, 'XTick',[])
 set(gca, 'YTick',[])
-%consistentTickPrecision(gca,'x',1)
 consistentTickPrecision(gca,'y',1)
 set(gca, 'FontSize',fontSize)
 xlabel('Average ability coordinate A')
-%ylabel('Composition coordinate b (ECI*)')
 
 % Segment labels
 text(text_x1,text_y1,'Region 1', 'HorizontalAlignment','right', 'FontSize',fontSize)
@@ -398,7 +346,3 @@ if pp.saveFigures
    
    save_image(h, fileName, savemode)
 end
-
-
-
-

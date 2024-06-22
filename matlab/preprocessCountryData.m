@@ -1,15 +1,8 @@
 function countryData = preprocessCountryData()
 global pp
 
-HS_robustness_check = false;
-
-% TODO: Why put a flag here? Probably should have a separate
-% preprocessHSData file.
-
-
-
 % Load data set 1
-if ~HS_robustness_check
+if ~pp.HS_robustness_check
    load(fullfile(pp.dataFolder, 'cntryyear_pmc.mat'));  % loads struct1
    load(fullfile(pp.dataFolder, 'fig5b.mat'));          % loads Rcpt (+ others)
    mat_file_name = 'countryData.mat';
@@ -67,5 +60,3 @@ countryData = table(regionCodes, years, GDPpc, diversity0, diversity, A, A_m, A_
 % Store for access by analysis script
 file_name = fullfile('./save/', mat_file_name);
 save(file_name,'countryData')
-
-
