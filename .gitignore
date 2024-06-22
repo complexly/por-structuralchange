@@ -5,15 +5,18 @@ TODO.txt
 *.eps
 *.pdf
 *.npy
+*.pyc
 
 # folders
 .ipynb_checkpoints/
 .venv/
+__pycache__/
 _archive/
 output/
 
 # downloads
 country_sitcproduct4digit_year.dta
+sitc2_proximities.csv
 
 # save files
 cleaned.parquet
@@ -23,4 +26,3 @@ countryData.mat
 fig5b.mat
 metric2016.mat
 rcptcolumns.mat
-sitc2_proximities.csv
