@@ -1,14 +1,26 @@
+TODO.txt
+
+# types
 .DS_Store
 *.eps
 *.pdf
 *.npy
-TODO.txt
 
+# folders
 .ipynb_checkpoints/
+.venv/
 _archive/
 output/
-.venv/
-analyses_unused/
-tools_unused/
 
+# downloads
+country_sitcproduct4digit_year.dta
+
+# save files
+cleaned.parquet
+cntryyear_pmc.mat
+country_sitcproduct2digit_year.mat
 countryData.mat
+fig5b.mat
+metric2016.mat
+rcptcolumns.mat
+sitc2_proximities.csv
