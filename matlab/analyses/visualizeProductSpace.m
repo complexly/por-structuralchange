@@ -1,18 +1,18 @@
 function visualizeProductSpace()
 
-global pp ap dataStruct
+global pp
 announceFunction()
 
 %====================================================================%
 % Load network data
 %====================================================================%
 % Load edges (proximities)
-load('../data/mincop_proximity.mat')
+load('./save/mincop_proximity.mat')
 %load('adjmat.mat')
 %pcolor(full(adjmat))
 
 % Load node attributes
-fid = fopen('../data/nodes_with_xy.tsv');
+fid = fopen('./save/nodes_with_xy.tsv');
 [fileContents,position] = textscan(fid,'%s%s%s%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
 fclose(fid);
 
@@ -342,7 +342,7 @@ set(gca, 'DataAspectRatio', [1 1 1])
 %set(gca, 'YTick',[])
 %consistentTickPrecision(gca,'x',1)
 %consistentTickPrecision(gca,'y',1)
-set(gca, 'FontSize',ap.fontSize)
+set(gca, 'FontSize',pp.fontSize)
 xlabel('SITC code')
 ylabel('SITC code')
 

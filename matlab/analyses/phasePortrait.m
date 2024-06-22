@@ -1,5 +1,5 @@
 function phasePortrait()
-global pp ap dataStruct
+global pp
 announceFunction()
 
 %========================================================================%
@@ -133,9 +133,9 @@ hold off
 
 % Axis labels
 %text(1.08, 0, '2nd eigenmode', 'Color','k', 'FontSize',fontSize)
-%text(x_3rd(1)-0.02, y_3rd(1)+0.09, '3rd eigenmode', 'Color','k', 'FontSize',ap.fontSize, 'Rotation',eigenvectorAngle, 'FontSize',fontSize)
+%text(x_3rd(1)-0.02, y_3rd(1)+0.09, '3rd eigenmode', 'Color','k', 'FontSize',pp.fontSize, 'Rotation',eigenvectorAngle, 'FontSize',fontSize)
 text(1.08,        0, '2nd eigenvector v_2', 'Color','k', 'FontSize',fontSize)
-text(0.1274, 0.3720, '3rd eigenvector v_3', 'Color','k', 'FontSize',ap.fontSize, 'Rotation',eigenvectorAngle, 'FontSize',fontSize)
+text(0.1274, 0.3720, '3rd eigenvector v_3', 'Color','k', 'FontSize',pp.fontSize, 'Rotation',eigenvectorAngle, 'FontSize',fontSize)
 
 % Positive and negative ECI text
 xECI = 0.78;
@@ -159,7 +159,7 @@ set(gca, 'YTick',[])
 set(gca, 'XColor','w', 'YColor','w')
 %consistentTickPrecision(gca,'x',1)
 %consistentTickPrecision(gca,'y',1)
-set(gca, 'FontSize',ap.fontSize)
+set(gca, 'FontSize',pp.fontSize)
 %xlabel('2nd eigenmode (PCI)', 'Color','k', 'Position',[1.448980545511051 0.0517006802721085 -1])
 %ylabel('3rd eigenmode',       'Color','k', 'Rotation',eigenvectorAngle, 'Position',[0.31700680272108855 0.6870757836062906 -1])
 

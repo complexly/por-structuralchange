@@ -1,5 +1,5 @@
 function phaseSpacePathways()
-global pp ap dataStruct
+global pp
 announceFunction()
 
 %========================================================================%
@@ -444,7 +444,7 @@ if false
    %set(gca, 'YTick',[])
    %consistentTickPrecision(gca,'x',1)
    %consistentTickPrecision(gca,'y',1)
-   set(gca, 'FontSize',ap.fontSize)
+   set(gca, 'FontSize',pp.fontSize)
    xlabel('GDP per capita PPP ($)')
    ylabel('Export diversity d')
    

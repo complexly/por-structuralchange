@@ -1,6 +1,6 @@
 function visualizeProductSpaceGuide2()
 
-global pp ap dataStruct
+global pp
 announceFunction()
 
 
@@ -8,12 +8,12 @@ announceFunction()
 % Load network data
 %====================================================================%
 % Load edges (proximities)
-load('../data/mincop_proximity.mat')
+load('./save/mincop_proximity.mat')
 %load('adjmat.mat')
 %pcolor(full(adjmat))
 
 % Load node attributes
-fid = fopen('../data/nodes_with_xy.tsv');
+fid = fopen('./save/nodes_with_xy.tsv');
 [fileContents,position] = textscan(fid,'%s%s%s%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
 fclose(fid);
 

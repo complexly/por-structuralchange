@@ -1,19 +1,19 @@
 function visualizeProductSpaceHighlight()
 
-global pp ap dataStruct
+global pp
 announceFunction()
 
 %====================================================================%
 % Load network data
 %====================================================================%
 % Load edges (proximities)
-load('../data/mincop_proximity.mat')
+load('./save/mincop_proximity.mat')
 %load('adjmat.mat')
 %pcolor(full(adjmat))
 
 % Load node attributes
 %fid = fopen('../data/nodes_with_xy.tsv');
-fid = fopen('../data/nodes_with_xy_3rd.tsv');
+fid = fopen('./save/nodes_with_xy_3rd.tsv');
 [fileContents,position] = textscan(fid,'%s%s%s%f%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
 fclose(fid);
 

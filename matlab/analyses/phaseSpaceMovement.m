@@ -1,5 +1,5 @@
 function phaseSpaceMovement()
-global pp ap dataStruct hdiversity
+global pp hdiversity
 announceFunction()
 
 

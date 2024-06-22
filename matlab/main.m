@@ -1,22 +1,19 @@
 % Main file for paper.  Everything up to "ANALYSES" is the common stem, and
 % then what follows are individual analyses that can be switched on or off.
 clear
-addpath('../data')
+addpath('../python/data')
 addpath('./save')
 addpath('./analyses')
 addpath('./tools')
-addpath('./tools/stochastic')
-addpath('./tools/DMD_ROM')
-% addpathTree('~/Documents/Work/Resources/Code')
-addpathTree('~/Documents/Work/Projects/Code/matlab')
-global pp ap
+addpath('./tools/SubAxis')
 
 % Processing parameters
-%pp.readData            = 'read';       %read, load, use
+global pp
+pp.dataFolder           = '../python/data/';
 pp.outputFolder         = './output';
 pp.saveFigures          = false;
 pp.HS_robustness_check  = false;
-ap.fontSize             = 16;
+pp.fontSize             = 16;
 
 % Setup output file
 outputFile = fullfile(pp.outputFolder,'Output.txt');
@@ -24,40 +21,40 @@ delete( outputFile )
 diary(  outputFile )
 
 % Report program start
-dispc('=====================================================================')
-dispc('RUNNING MAIN.M...')
-dispc('=====================================================================')
+disp('=====================================================================')
+disp('RUNNING MAIN.M...')
+disp('=====================================================================')
 tic
 
 % Create countryData table and save to .mat file
-if false; preprocessCountryData(); end
+if true; preprocessCountryData(); end
 
 
 % Main (+ some SI)
-if false; compareComplexityMetrics(); end
+if true; compareComplexityMetrics(); end
 
-if false; phaseSpaceCountries(); end
-if false; phaseSpaceHeatMaps(); end
-if false; phaseSpaceMovement(); end
-if false; phaseSpacePathways(); end
+if true; phaseSpaceCountries(); end
+if true; phaseSpaceHeatMaps(); end
+if true; phaseSpaceMovement(); end
+if true; phaseSpacePathways(); end
 
-if false; ECI_v_ECIstar(); end
+if true; ECI_v_ECIstar(); end
 
 % Methods
-if false; analyzeRCA_distribution(); end
+if true; analyzeRCA_distribution(); end
 
 % SI
-if false; eigenvalueSpectrum(); end
-if false; correlationTimeSeries(); end
-if false; phasePortrait(); end
+if true; eigenvalueSpectrum(); end
+if true; correlationTimeSeries(); end
+if true; phasePortrait(); end
 
-% Main (time-consuming)
-if false; visualizeProductSpaceGuide2(); end
-if false; visualizeProductSpace(); end
-if false; visualizeProductSpaceHighlight(); end
-if false; visualizeProductSpaceHighlightFirstEV(); end
+% Main network visualizations (these are more time-consuming)
+if true; visualizeProductSpaceGuide2(); end
+if true; visualizeProductSpace(); end
+if true; visualizeProductSpaceHighlight(); end
+if true; visualizeProductSpaceHighlightFirstEV(); end
 
 
-toc
+toc % ~130 sec
 diary off
-dispc( [newline,newline,newline] )
+disp( [newline,newline,newline] )

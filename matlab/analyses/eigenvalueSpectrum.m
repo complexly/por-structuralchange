@@ -1,6 +1,6 @@
 function eigenvalueSpectrum()
 
-global pp ap dataStruct
+global pp
 announceFunction()
 
 %========================================================================%
@@ -71,7 +71,7 @@ set(gca, 'YLim',yLim)
 %set(gca, 'DataAspectRatio', [1 1 1])
 %set(gca, 'XTick',[])
 %set(gca, 'YTick',[])
-set(gca, 'FontSize',ap.fontSize)
+set(gca, 'FontSize',pp.fontSize)
 xlabel('Eigenvector index \mu')
 ylabel({'Pearson correlation', 'of eigenvectors'})
 
@@ -128,7 +128,7 @@ set(gca, 'YLim',yLim)
 %set(gca, 'DataAspectRatio', [1 1 1])
 %set(gca, 'XTickLabel',[])
 %set(gca, 'YTick',[])
-set(gca, 'FontSize',ap.fontSize)
+set(gca, 'FontSize',pp.fontSize)
 xlabel('Eigenvector index \mu')
 ylabel('Laplacian eigenvalue \kappa_\mu')
 
@@ -157,7 +157,7 @@ legend('Location','southeast', 'box','off')
 % %set(gca, 'DataAspectRatio', [1 1 1])
 % %set(gca, 'XTick',[])
 % %set(gca, 'YTick',[])
-% set(gca, 'FontSize',ap.fontSize)
+% set(gca, 'FontSize',pp.fontSize)
 % xlabel('Eigenvector index \mu')
 % ylabel('Presumed time-scale \tau_\mu')
 

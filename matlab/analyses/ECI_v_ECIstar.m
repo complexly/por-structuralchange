@@ -1,7 +1,7 @@
 function ECI_v_ECIstar()
 % Plots the data.
 
-global pp ap dataStruct
+global pp
 announceFunction()
 
 %========================================================================%

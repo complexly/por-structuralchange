@@ -1,4 +1,5 @@
 function countryData = preprocessCountryData()
+global pp
 
 HS_robustness_check = false;
 
@@ -9,12 +10,12 @@ HS_robustness_check = false;
 
 % Load data set 1
 if ~HS_robustness_check
-   load('../data/cntryyear_pmc.mat');                 % loads struct1
-   load('../data/fig5b.mat');                         % loads Rcpt (+ others)
+   load(fullfile(pp.dataFolder, 'cntryyear_pmc.mat'));  % loads struct1
+   load(fullfile(pp.dataFolder, 'fig5b.mat'));          % loads Rcpt (+ others)
    mat_file_name = 'countryData.mat';
 else
-   load('../data/HS_comparison/cntryyear_pmc_hs.mat') % loads struct1
-   load('../data/HS_comparison/rcpt.mat')             % loads Rcpt
+   load(fullfile(pp.dataFolder, 'HS_comparison/cntryyear_pmc_hs.mat')) % loads struct1
+   load(fullfile(pp.dataFolder, 'HS_comparison/rcpt.mat'))             % loads Rcpt
    mat_file_name = 'countryData_HS.mat';
 end
 

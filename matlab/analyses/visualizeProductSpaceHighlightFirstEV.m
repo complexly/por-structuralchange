@@ -1,24 +1,19 @@
 function visualizeProductSpaceHighlightFirstEV()
 
-global pp ap dataStruct
+global pp
 announceFunction()
 
 %====================================================================%
 % Load network data
 %====================================================================%
 % Load edges (proximities)
-load('../data/mincop_proximity.mat')
-%load('adjmat.mat')
-%pcolor(full(adjmat))
+load('./save/mincop_proximity.mat')
 
 % Load node attributes
-%fid = fopen('../data/nodes_with_xy.tsv');
-fid = fopen('../data/nodes_with_xy_3rd.tsv');
-[fileContents,position] = textscan(fid,'%s%s%s%f%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
+%fid = fopen('./save/nodes_with_xy.tsv');
+fid = fopen('./save/nodes_with_xy_3rd.tsv');
+fileContents = textscan(fid,'%s%s%s%f%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
 fclose(fid);
-
-
-
 
 SITCcode_3d = fileContents{1};
 nodeColor   = fileContents{2};
@@ -34,8 +29,8 @@ groupLabels = ones(n,1);
 nodeSizes   = ones(n,1);
 nGroups     = numel(unique(nodeSizes));
 
-% Add a tiny amount to each link to avoid absolute zeros, which will screw
-% up the color mapping
+% Add tiny amount to all edge weights to avoid absolute zeros (which
+% screw up color mapping)
 A = A + 1e-6;
 
 %====================================================================%

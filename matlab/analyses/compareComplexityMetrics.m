@@ -1,7 +1,7 @@
 function compareComplexityMetrics()
 % Plots the data.
 
-global pp ap dataStruct
+global pp
 announceFunction()
 
 %========================================================================%
@@ -15,9 +15,9 @@ announceFunction()
 % diversity        = countryData.divesity;
 run_filter_robustness_check = false;
 if run_filter_robustness_check
-   load('../data/robustness_check/metric2016.mat')
+   load(fullfile(pp.dataFolder, 'robustness_check/metric2016.mat'))
 else
-   load('../data/metric2016.mat')
+   load(fullfile(pp.dataFolder, 'metric2016.mat'))
 end
 fitness2016 = struct1.fitness2016;
 eci2016     = struct1.eci2016;
@@ -70,23 +70,23 @@ X1mod_A_spearman    = corr((X1 .* diversity)',       A_p',       'type','Spearma
 X2mod_ECIstar_spearman  = corr((X2 ./ sqrt(diversity))', ECIstar_p', 'type','Spearman');
 
 disp('Fitness correlations')
-dispc(fitness_A_pearson)
-dispc(fitness_A_spearman)
+disp(fitness_A_pearson)
+disp(fitness_A_spearman)
 disp(' ')
 
 disp('Production ability correlations')
-dispc(prodAbil_A_pearson)
-dispc(prodAbil_A_spearman)
+disp(prodAbil_A_pearson)
+disp(prodAbil_A_spearman)
 disp(' ')
 
 disp('X1 correlations')
-dispc(X1mod_A_pearson)
-dispc(X1mod_A_spearman)
+disp(X1mod_A_pearson)
+disp(X1mod_A_spearman)
 disp(' ')
 
 disp('X2 correlations')
-dispc(X2mod_ECIstar_pearson)
-dispc(X2mod_ECIstar_spearman)
+disp(X2mod_ECIstar_pearson)
+disp(X2mod_ECIstar_spearman)
 
 
 
@@ -223,7 +223,7 @@ if false
    %set(gca, 'YTick',[])
    %consistentTickPrecision(gca,'x',1)
    %consistentTickPrecision(gca,'y',1)
-   set(gca, 'FontSize',ap.fontSize)
+   set(gca, 'FontSize',pp.fontSize)
    %xlabel('x label')
    %ylabel('y label')
    

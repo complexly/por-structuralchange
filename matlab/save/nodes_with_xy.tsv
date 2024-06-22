@@ -1,0 +1,236 @@
+sitc3d	color	prodname	x	y	pci
+001	#ffe999	001 - Live animals chiefly for food	293.7192	-308.13412	-0.05805517916944894
+011	#ffe999	011 - Meat and edible meat offal, fresh, chilled or frozen (except meat and meat offals unfit or unsuitable for human consumption)	246.37567	-276.45078	-0.04727380890414065
+012	#ffe999	012 - Meat and edible meat offals (except poultry liver), salted, in brine, dried, or smoked	-171.69429	-207.94963	0.004117403409092526
+014	#ffe999	014 - Meat and edible meat offal, prepared, preserved, n.e.s.; fish extracts	486.57565	326.09528	-0.03057873001982961
+022	#ffe999	022 - Milk and cream	128.09341	-194.47026	0.04586943491046728
+023	#ffe999	023 - Butter	147.09413	-224.09998	-0.0090861196268204
+024	#ffe999	024 - Cheese and curd	45.303486	-147.95157	0.030562732104673772
+025	#ffe999	025 - Eggs, birds', and egg yolks, fresh, dried or otherwise preserved, sweetened or not	393.87753	8.010633	-0.010878897657472323
+034	#ffe999	034 - Fish, fresh (live or dead), chilled or frozen	549.4062	347.27173	-0.045177195918544376
+035	#ffe999	035 - Fish, dried, salted or in brine; smoked fish (whether or not cooked before or during the smoking process)	306.1819	-341.32483	-0.04598942529286517
+036	#ffe999	036 - Crustaceans and molluscs, whether in shell or not, fresh (live or dead), chilled, frozen, salted, in brine or dried; crustaceans, in shell, simply boiled in water	662.3726	237.96036	-0.0581424422171303
+037	#ffe999	037 - Fish, crustaceans and molluscs, prepared or preserved, n.e.s.	514.4037	348.32834	-0.04608806184496195
+041	#ffe999	041 - Wheat (including spelt) and meslin, unmilled	-9.639834	-420.456	-0.03949574497179622
+042	#ffe999	042 - Rice	328.22333	-299.25	-0.0583651982498236
+043	#ffe999	043 - Barley, unmilled	-72.93695	-389.23068	-0.013876464264565113
+044	#ffe999	044 - Maize (corn), unmilled	-180.7062	263.4496	-0.06938427011696548
+045	#ffe999	045 - Cereals, unmilled (other than wheat, rice, barley and maize)	-43.93215	-409.36426	-0.02624400149146047
+046	#ffe999	046 - Meal and flour of wheat and flour of meslin	-207.52509	-213.77571	0.020245179473516898
+047	#ffe999	047 - Other cereal meals and flours	-179.97836	227.61699	-0.025575395926164812
+048	#ffe999	048 - Cereal preparations and preparations of flour or starch of fruits or vegetables	236.35336	8.681674	0.006224373114637178
+054	#ffe999	054 - Vegetables, fresh, chilled, frozen or slmply preserved (including dried leguminous vegetables); roots, tubers and other edible vegetable products, n.e.s., fresh or dried	429.09448	283.20776	-0.03703274842284495
+056	#ffe999	056 - Vegetables, roots and tubers, prepared or preserved, n.e.s.	344.67535	275.06223	-0.00691114245745452
+057	#ffe999	057 - Fruit and nuts (not including oil nuts), fresh or dried	655.22156	285.3303	-0.06927139282160373
+058	#ffe999	058 - Fruit, preserved, and fruits preparations	380.5978	265.15695	-0.019199085317627162
+061	#ffe999	061 - Sugar and honey	686.05536	264.4695	-0.0641990206117606
+062	#ffe999	062 - Sugar confectionery (except chocolate confectionery) and other sugar preparations	111.54494	21.488806	0.04189553348061851
+071	#ffe999	071 - Coffee and coffee substitutes	596.39514	400.85516	-0.11787201102826547
+072	#ffe999	072 - Cocoa	162.44139	478.08765	-0.10751146102755851
+073	#ffe999	073 - Chocolate and other food preparations containing cocoa, n.e.s.	-262.09183	-184.93904	0.07403886173934962
+074	#ffe999	074 - Tea and maté	138.41566	218.77052	-0.09102162898941704
+075	#ffe999	075 - Spices	659.07153	358.92477	-0.08382035909748603
+081	#ffe999	081 - Feeding stuff for animals (not including unmilled cereals)	615.8512	369.02295	-0.08673114003314647
+091	#ffe999	091 - Margarine and shortening	-45.50069	-444.85693	0.030458881278985543
+098	#ffe999	098 - Edible products and preparations, n.e.s.	449.00934	314.69574	-0.018964202904138572
+111	#6e451e	111 - Non-alcoholic beverages, n.e.s.	-109.55663	320.16272	-0.004710087873344101
+112	#6e451e	112 - Alcoholic beverages	425.4129	344.99475	-0.014860789846885531
+121	#6e451e	121 - Tobacco unmanufactured; tobacco refuse	534.52844	3.7425566	-0.08301381699877747
+122	#6e451e	122 - Tobacco, manufactured	-85.955505	373.6332	-0.004082516035493059
+211	#d66011	211 - Hides and skins (except furskins), raw	584.9661	350.55997	-0.08585717386312708
+212	#d66011	212 - Furskins, raw (including astrakhan, caracul, Persian lamb, broadtail and similar skins)	427.5205	-2.7300653	-0.029592690997952156
+222	#d66011	222 - Oil seeds and oleaginous fruit, whole or broken, of a kind used for the extraction of 'soft' fixed vegetable oils (excluding flours and meals)	643.34625	425.789	-0.09669362977862966
+223	#d66011	223 - Oil seeds and oleaginous fruit, whole or broken, of a kind used for the extraction of other fixed vegetable oils (including non-defatted flours and meals of oil seeds and oleaginous fruit)	694.53973	329.88632	-0.11229456785229823
+232	#d66011	232 - Natural rubber latex; natural rubber and similar natural gums	-103.367325	174.69699	-0.10500384761730666
+233	#d66011	233 - Synthetic rubber latex; synthetic rubber and reclaimed rubber; waste and scrap of unhardened rubber	-555.0968	-26.842873	0.017310726098792185
+244	#d66011	244 - Cork, natural, raw and waste (including natural cork in blocks or sheets)	476.93875	-176.89818	-0.02072693702956844
+245	#d66011	245 - Fuel wood (excluding wood waste) and wood charcoal	462.96692	10.205593	-0.016107045725968615
+246	#d66011	246 - Pulpwood (including chips and wood waste)	63.681366	352.2095	-0.0060280261244416615
+247	#d66011	247 - Other wood in the rough or roughly squared	122.46863	456.46194	-0.09173477083879149
+248	#d66011	248 - Wood, simply worked, and railway sleepers of wood	104.97166	423.64838	-0.06582506814041626
+251	#d66011	251 - Pulp and waste paper	575.88403	-166.95172	0.011074695676587294
+261	#d66011	261 - Silk	525.90894	-129.0578	-0.013722177588238552
+263	#d66011	263 - Cotton	645.1261	390.2764	-0.11217206111009113
+264	#d66011	264 - Jute and other textile bast fibres, n.e.s., raw or processed but not spun; tow and waste thereof (including pulled or garnetted rags or ropes)	169.70656	243.86111	-0.06290738644468885
+265	#d66011	265 - Vegetable textile fibres (other than cotton and jute) and waste or such fibres	498.6454	2.4057345	-0.05664244524852285
+266	#d66011	266 - Synthetic fibres suitable for spinning	-225.5418	-181.88898	0.0852867900242448
+267	#d66011	267 - Other man-made fibres suitable for spinning and waste of man-made fibres	-257.00635	-82.00027	0.08300274514763206
+268	#d66011	268 - Wool and other animal hair (excluding wool tops)	88.60002	-10.906291	-0.07114759920841947
+269	#d66011	269 - Old clothing and other old textile articles; rags	-361.50125	56.04844	0.045046441183940585
+271	#d66011	271 - Fertilizers, crude	15.232807	-451.4385	-0.07171150489572677
+273	#d66011	273 - Stone, sand and gravel	404.66135	313.9877	-0.00837847059641025
+274	#d66011	274 - Sulphur and unroasted iron pyrites	459.80322	-146.64844	-0.005471007782124795
+277	#d66011	277 - Natural abrasives, n.e.s. (including industrial diamonds)	-82.408676	444.97098	-0.06723921604878047
+278	#d66011	278 - Other crude minerals	346.04422	-335.3739	-0.05254939378391756
+281	#d66011	281 - Iron ore and concentrates	502.25912	380.1599	-0.04973118537612761
+282	#d66011	282 - Waste and scrap metal of iron or steel	-237.18373	19.087687	0.008037618929547736
+286	#d66011	286 - Ores and concentrates of uranium and thorium	602.58936	-143.08229	-0.07082372308946569
+287	#d66011	287 - Ores and concentrates of base metals, n.e.s.	621.41315	268.87408	-0.08623858641916395
+288	#d66011	288 - Non-ferrous base metal waste and scrap, n.e.s.	484.969	291.07953	-0.013600740353415335
+289	#d66011	289 - Ores and concentrates of precious metals, waste, scrap and sweepings of precious metals (other than of gold)	-111.10712	-221.45702	-0.034494822700133654
+291	#d66011	291 - Crude animal materials, n.e.s.	567.65173	313.54413	-0.053871072381790355
+292	#d66011	292 - Crude vegetable materials, n.e.s.	620.7218	332.4423	-0.05908302388405616
+322	#330000	322 - Coal, lignite and peat	-129.32602	-266.91132	0.0028015815690054418
+323	#330000	323 - Briquettes; coke and semi-coke of coal,lignite or peat; retort carbon	-522.31714	-107.31142	0.0184732176585383
+333	#330000	333 - Crude petroleum and oils obtained from bituminous minerals	-29.21817	-371.84518	-0.12530166532375575
+334	#330000	334 - Petroleum products, refined	-62.259434	-354.42627	-0.09393296509303689
+335	#330000	335 - Residual petroleum products, n.e.s. and related materials	-94.54923	-314.0941	-0.051152666510118315
+341	#330000	341 - Gas, natural and manufactured	-542.6687	10.977253	-0.06282850849148583
+351	#330000	351 - Electric current	-296.8284	-189.44373	0.05374990119005842
+411	#ffc41c	411 - Animal oils and fats	179.27745	-211.55197	-0.01485510558270443
+423	#ffc41c	423 - Fixed vegetable oils, 'soft', crude, refined or purified	608.831	436.0296	-0.0511932873468853
+424	#ffc41c	424 - Other fixed vegetable oils, fluid or solid, crude, refined or purified	704.1576	295.25226	-0.09469092617516082
+431	#ffc41c	431 - Animal and vegetable oils and fats, processed, and waxes of animal or vegetable origin	206.6214	-237.53653	-0.044841337372872915
+511	#71144b	511 - Hydrocarbons, n.e.s., and their halogenated, sulphonated, nitrated or nitrosated derivatives	-145.88225	-236.38017	0.05213629625203237
+512	#71144b	512 - Alcohols, phenols, phenol-alcohols, and their halogenated, sulphonated, nitrated or nitrosated derivatives	-167.8852	-147.7017	0.03020434504741313
+513	#71144b	513 - Carboxylic acids, and their anhydrides, halides, peroxides and peracids, and their halogenated, sulphonated, nitrated or nitrosated derlvatlves	-55.362526	-134.88075	0.03912432304301628
+514	#71144b	514 - Nitrogen-function compounds	-98.47069	-149.75266	0.06798508876507976
+515	#71144b	515 - Organo-inorganic and heterocyclic compounds	-88.273285	-115.84434	0.05757654260388887
+516	#71144b	516 - Other organic chemicals	-511.1709	-22.144857	0.05553011282291221
+522	#71144b	522 - Inorganic chemical elements, oxides and halogen salts	39.290096	-205.29567	0.013456861084049686
+523	#71144b	523 - Other inorganic chemicals; organic and inorganic compounds of precious metals	8.339012	-183.10721	0.02324385653850832
+524	#71144b	524 - Radio-active and associated materials	-286.36002	-276.9735	0.020738977411677347
+531	#71144b	531 - Synthetic organic dyestuffs, etc., natural indigo and colour lakes	-428.17407	-252.37003	0.06824883602673337
+532	#71144b	532 - Dyeing and tanning extracts, and synthetic tanning materials	584.7106	-205.39856	-0.03304214429971824
+533	#71144b	533 - Pigments, paints, varnishes and related materials	-175.67703	152.31999	0.06458809979415488
+541	#71144b	541 - Medicinal and pharmaceutical products	-135.52551	84.78095	0.06439215105521201
+551	#71144b	551 - Essential oils, perfume and flavour materials	659.8401	323.68015	-0.03811964960863627
+553	#71144b	553 - Perfumery, cosmetics and toilet preparations (excluding soaps); aqueous distillates and aqueous solutions of essential oils (including such products suitable for medicinal uses)	-114.16679	278.085	0.037459344293851636
+554	#71144b	554 - Soap, cleansing and polishing preparations	-349.41116	-140.99197	0.06568849085642774
+562	#71144b	562 - Fertilizers, manufactured	73.95727	63.38038	0.038705728971432415
+572	#71144b	572 - Explosives and pyrotechnic products	36.63082	32.75097	0.0456446287544804
+582	#71144b	582 - Condensation, polycondensation and polyaddition products, whether or not modified or polymerized, and whether or not linear (e.g., phenoplasts, aminoplasts, alkyds, polyallyl esters and other unsaturated polyesters, silicones)	-400.64664	-49.59342	0.09339113622275302
+583	#71144b	583 - Polymerization and copolymerization products (e.g., polyethylene, plytetrahaloethylenes, polyisobutylene, plystyrene, plyvinyl chloride, polyvinyl acetate, plyvinyl chloroacetate and other plyvinyl derivatives, plyacrylic and plymethacrylic derivatives, coumarone-indene resins)	-441.3417	-178.90385	0.10927321941483319
+584	#71144b	584 - Regenerated cellulose; cellulose nitrate, cellulose acetate and other, cellulose esters, cellulose ethers and other chemical derivatives of cellulose, plasticized or not (e.g., collodions, celluloid); vulcanized fibre	-355.0061	-97.81716	0.09897594364966694
+585	#71144b	585 - Other artificial resins and plastic materials	6.494921	248.46893	0.054569772878152484
+591	#71144b	591 - Disinfectants, insecticides, fungicides, weed killers, anti-sprouting products, rat poisons and similar products, put up in forms or packings for sale by retail or as preparations or as articles (e.g., sulphur-treated bands, wicks and candles, fly-papers)	-450.70206	-10.11401	0.045586984599732844
+592	#71144b	592 - Starches, insulin and wheat gluten; albuminoidal substances; glues	342.6922	6.055574	-0.00196771724259115
+598	#71144b	598 - Miscellaneous chemical products, n.e.s.	-137.49263	119.39536	0.03488280980462401
+611	#ff0000	611 - Leather	55.697433	-2.169806	-0.0073530200484115404
+612	#ff0000	612 - Manufactures of leather or of composition leather, n.e.s.; saddlery and harness; parts of footwear, n.e.s.	-12.081396	194.74612	0.028437047337549582
+613	#ff0000	613 - Furskins, tanned or dressed (including furskins assembled in plates, crosses and similar forms); pieces of cuttings of  furskins, tanned or dressed (including heads, paws, tails and the like, not being fabricated)	-133.42273	-193.64618	0.03818070414133642
+621	#ff0000	621 - Materials of rubber (e.g., pastes, plates, sheets, rods, thread, tubes, or rubber)	-219.26659	50.396477	0.06666535020892708
+625	#ff0000	625 - Rubber tyres, tyre cases, interchangeable tyre treads, inner tubes and tyre flaps, for wheels of all kinds	-111.340546	45.317955	0.06694113203049872
+628	#ff0000	628 - Articles of rubber, n.e.s.	-195.23155	-42.761074	0.07089979455222895
+633	#ff0000	633 - Cork manufactures	510.47083	-187.09305	0.013468296985574647
+634	#ff0000	"634 - Veneers, plywood, ""improved"" or reconstituted wood and other wood, worked, n.e.s."	130.77199	500.3972	-0.03792382316672412
+635	#ff0000	635 - Wood manufactures, n.e.s.	22.113344	207.09988	0.025346883559240578
+641	#ff0000	641 - Paper and paperboard	610.9279	-182.56725	0.04648833167390806
+642	#ff0000	642 - Paper and paperboard, cut to size or shape, and articles of paper or paperboard	32.754387	67.26136	0.07115384050886198
+651	#ff0000	651 - Textile yarn	116.075356	140.7828	0.03274656469483198
+652	#ff0000	652 - Cotton fabrics, woven (not including narrow or special fabrics)	130.1452	174.53229	0.019255257067233984
+653	#ff0000	653 - Fabrics, woven, of man-made fibres (not including narrow or special fabrics)	-1.2455816	92.34044	0.06166369699082255
+654	#ff0000	654 - Textile fabrics, woven, other than of cotton or man-made fibres	-96.83693	-35.893562	0.05441550890327294
+655	#ff0000	655 - Knitted or crocheted fabrics (including tubular knit fabrics, pile fabrics and open-work fabrics)	-118.87153	11.136049	0.08458851318634052
+656	#ff0000	656 - Tulle, lace, embroidery, ribbons, trimmings and other small wares	-64.38424	67.49499	0.08068024231703141
+657	#ff0000	657 - Special textile fabrics and related products	-3.935276	130.11746	0.05490810547394236
+658	#ff0000	658 - Made-up articles, wholly or chiefly of textile materials, n.e.s.	99.494316	193.70343	0.009936715860130558
+659	#ff0000	659 - Floor coverings, etc.	58.468933	206.15868	0.0053027795372079705
+661	#ff0000	661 - Lime, cement, and fabricated construction materials (except glass and clay materials)	371.6991	298.52472	-0.004356963484699085
+662	#ff0000	662 - Clay construction materials and refractory construction materials	-13.137716	14.6484785	0.041690995672627164
+663	#ff0000	663 - Mineral manufactures, n.e.s.	-260.6349	50.01244	0.0900376353799484
+664	#ff0000	664 - Glass	-133.53647	-120.33771	0.06244062850915199
+665	#ff0000	665 - Glassware	4.4561467	46.74873	0.0542009173275559
+666	#ff0000	666 - Pottery	-78.989456	33.375343	0.0633511164386319
+667	#ff0000	667 - Pearls, precious and semi-preclous stones, unworked or worked	-94.276825	408.63882	-0.041502893434359034
+671	#ff0000	671 - Pig iron, spiegelelsen, sponge iron, iron or steel powders and shot, and ferro-alloys	543.78253	-201.13795	-0.008797801676421982
+672	#ff0000	672 - Ingots and other primary forms, of iron or steel	540.9592	-160.87961	0.008528593878721562
+673	#ff0000	673 - Iron and steel bars, rods, angles, shapes and sections (including sheet piling)	-126.56431	-53.326847	0.07641779925338421
+674	#ff0000	674 - Universals, plates, and sheets, of iron or steel	-133.96388	-155.36237	0.07203509011309035
+676	#ff0000	676 - Rails and railway track construction material, of iron or steel	-152.44696	-90.28228	0.0596593658443036
+677	#ff0000	677 - Iron or steel wire (excluding wire rod), whether or not coated, but not insulated	-213.7461	-105.00821	0.0887102268136798
+678	#ff0000	678 - Tube, pipes and fittings, of iron or steel	-283.48907	-142.87073	0.09001248637258423
+679	#ff0000	679 - Iron and steel castings, forgings and stampings, in the rough state, n.e.s.	-387.8994	29.827871	0.061722343405264696
+681	#ff0000	681 - Silver, platinum and other metals of the platinum group	492.37122	-122.81571	-0.007330505102335275
+682	#ff0000	682 - Copper	600.8392	-236.4283	-0.01780694135954931
+683	#ff0000	683 - Nickel	644.98224	-169.01314	0.03308380021150082
+684	#ff0000	684 - Aluminium	-306.0031	-243.99144	0.021752902194206485
+685	#ff0000	685 - Lead	425.63437	-129.3991	-0.03328834561032012
+686	#ff0000	686 - Zinc	300.72025	-92.10807	-0.031007111966764398
+687	#ff0000	687 - Tin	-102.5852	139.79193	-0.036943386897146775
+688	#ff0000	688 - Uranium depleted in U235 and thorium, and their alloys, unwrought or wrought, and articles thereof, n.e.s.; waste and scrap of uranium depleted in U235 and of thorium	-234.53137	-329.2922	0.08014876703242056
+689	#ff0000	689 - Miscellaneous non-ferrous base metals employed in metallurgy, and cermets	112.282394	-38.52948	0.019317216781262136
+691	#ff0000	691 - Structures and parts, n.e.s., of iron, steel or aluminium	-189.07574	-77.61719	0.06250684796411131
+692	#ff0000	692 - Metal containers for storage and transport	-22.975985	-27.70469	0.029149905208894704
+693	#ff0000	693 - Wire products (excluding insulated electrical wire) and fencing grills	-191.56268	-173.30193	0.07734397805752084
+694	#ff0000	694 - Nails, screws, nuts, bolts, rivets and the like, of iron, steel or copper	-137.06525	-18.576836	0.0829448084045943
+695	#ff0000	695 - Tools for use in the hand or in machines	-202.26155	11.3045845	0.08110100992742594
+696	#ff0000	696 - Cutlery	-211.95036	-140.6672	0.07999551894384997
+697	#ff0000	697 - Household equipment of base metal, n.e.s.	-29.25716	70.02097	0.07963363380996638
+699	#ff0000	699 - Manufactures of base metal, n.e.s.	-46.609077	-0.6842652	0.0639274063701606
+711	#9edae5	711 - Steam and other vapour generating boilers, superheated water boilers, and auxiliary plant for use therewith; and parts thereof, n.e.s	-486.69147	-107.165825	0.07867072092625664
+712	#9edae5	712 - Steam and other vapour power units, not incorporating boilers; steam engines (including mobile engines, but not steam tractors falling within heading 722 or mechanically propelled road rollers) with self-contained boilers; and parts thereof, n.e.s.	-395.28787	-223.44272	0.08921888405205669
+713	#9edae5	713 - Internal combustion piston engines, and parts thereof, n.e.s.	-297.69608	52.75464	0.0879100907400374
+714	#9edae5	714 - Engines and motors, non-electric (other than those of groups 712, 713 and 718); parts, n.e.s. of the engines and motors of group 714 and item 718.88	212.05736	213.73068	0.015510946210583368
+716	#9edae5	716 - Rotating electric plant and parts thereof, n.e.s.	-260.4415	-7.752327	0.09495148200089182
+718	#9edae5	718 - Other power generating machinery and parts thereof, n.e.s.	248.38548	231.4336	0.026369637709448134
+721	#9edae5	721 - Agricultural machinery (excluding tractors) and parts thereof, n.e.s.	-471.66754	-47.582924	0.06847809201731667
+722	#9edae5	722 - Tractors (other than those falling within headings 744.11 and 783.2), whether or not fitted with power rake-offs, winches or pulleys	-460.93646	-84.87208	0.07957755284417828
+723	#9edae5	723 - Civil engineering and contractors' plant and equipment and parts thereof, n.e.s.	-479.9697	-146.60945	0.05812742771916664
+724	#9edae5	724 - Textile and leather machinery, and parts thereof, n.e.s.	-361.70502	-212.75241	0.09631220647901029
+725	#9edae5	725 - Paper mill and pulp mill machinery, paper cutting machines and other machinery for the manufacture of paper articles; and parts thereof, n.e.s.	-346.37314	-23.811367	0.09907588546122409
+726	#9edae5	726 - Printing, bookbinding machinery, and parts thereof, n.e.s.	-387.1602	-85.17222	0.10855530637907368
+727	#9edae5	727 - Food-processing machines (excluding domestic) and parts thereof, n.e.s.	-413.65677	-0.046114564	0.07704474030654163
+728	#9edae5	728 - Other machinery, equipment, for specialized industries, and parts thereof, n.e.s.	-382.78217	-17.932058	0.0804215447324956
+736	#9edae5	736 - Machine-tools for working metal or metal carbides, and parts and accessories thereof, n.e.s.	-317.56805	-84.84111	0.10153243378499884
+737	#9edae5	737 - Metalworking machinery (other than machine-tools), and parts thereof, n.e.s.	-499.96274	-73.82465	0.10326553523204442
+741	#9edae5	741 - Heating and cooling equipment and parts thereof, n.e.s.	-290.79443	-28.411495	0.1000202465913846
+742	#9edae5	742 - Pumps (including motor and turbo pumps) for liquids, whether or not fitted with measuring devices; liquid elevators of bucket, chain, screw, band and similar kinds; parts, needs, of such pumps and liquid elevators	-322.52637	-50.600163	0.09921941424429077
+743	#9edae5	743 - Pumps (other than pumps for liquids) and compressors; fans and blowers; centrifuges; filtering and purifying apparatus; and parts thereof, n.e.s.	-286.2411	17.496315	0.09921941424429077
+744	#9edae5	744 - Mechanical handling equipment, and parts thereof, n.e.s.	-359.39612	-60.48484	0.09059400413150454
+745	#9edae5	745 - Other non-electric machinery, tools and mechanical apparatus, and parts thereof, n.e.s.	-356.29327	11.538369	0.08340377706645548
+749	#9edae5	749 - Non-electric parts and accessories of machinery, n.e.s.	-316.82968	-3.5258324	0.10086373985153639
+751	#9edae5	751 - Office machines	-319.16367	-119.16213	0.0998796603865464
+752	#9edae5	752 - Automatic data processing machines and units thereof; magnetic or optical readers, machines for transcribing data onto data media in coded form and machines for processing such data, n.e.s.	-382.69766	-122.533554	0.10870077397538257
+759	#9edae5	759 - Parts, n.e.s. of and accessories (other than covers, carrying cases and the like) suitable for use solely or principally with machines of a kind falling within heading 751 or 752	-452.66666	-121.594086	0.111542041880738
+761	#9edae5	761 - Television receivers (including receivers incorporatlng radio-broadcast receivers or sound recorders or reproducers)	-242.14742	-294.79547	0.09039915233809892
+762	#9edae5	762 - Radio-broadcast receivers (including receivers incorporating sound recorders or reproducers)	-222.43658	-248.34908	0.07761554215066631
+763	#9edae5	763 - Gramophones (phonographs), dictating machines and other sound recorders and reproducers (including record players and tape decks, with or without sound-heads); television image and sound recorders and reproducers, magnetic)	-258.95462	-252.2603	0.07203997076186254
+764	#9edae5	764 - Telecommunications equipment, n.e.s.; and parts, n.e.s. of and accessories for the apparatus and equipment falling within division 76	-328.51193	36.902412	0.08270509312512156
+771	#9edae5	771 - Electric power machinery (other than the rotating electric plant of heading 716), and parts thereof, n.e.s.	-224.3609	-14.890255	0.09537263072462872
+772	#9edae5	772 - Electrical apparatus for making and breaking electrical circuits, for the protection of electrical circuits, or for making connections to or in electrical circuits (e.g., switches, relays, fuses, lightning arresters, surge suppressors, plugs, lampholders and junction boxes); resistors, fixed or variable (including potentiometers), other, than heating resistors; printed circuits; switchboards (other than telephone switchboards), and control panels, n.e.s.; parts, n.e.s. of the foregoing apparatus	-286.92148	-63.433292	0.09238041140365491
+773	#9edae5	773 - Equipment for distribution of electricity	-160.81456	-51.344776	0.0652558085399421
+774	#9edae5	774 - Electric apparatus for medical purposes and radiological apparatus	-326.39005	-213.86609	0.09054055824884055
+775	#9edae5	775 - Household type, electrical and non-electrical equipment, n.e.s.	-315.4411	-159.30554	0.07702699503620732
+776	#9edae5	776 - Thermionic, cold cathode and photo-cathode valves and tubes (including vapour or gas filled valves and tubes, cathode-ray tubes, television camera tubes and merctury arc rectifying valves and tubes); photocells; mounted piezo-electric crystals; diodes, translators and similar semi-conductor devices; electronic microcircuits; and parts thereof, n.e.s.	-459.02487	-214.24667	0.05678801987532695
+778	#9edae5	778 - Electrical machinery and apparatus, n.e.s.	-247.65027	-116.758125	0.08935907869067022
+781	#9edae5	781 - Passenger motor cars (other than public-service type vehicles), including vehicles designed for the transport of both passengers and goods	-403.88803	-189.82083	0.10223174170939944
+782	#9edae5	782 - Motor vehicles for the transport of goods or materials and special purpose motor vehicles	-223.71576	-67.21884	0.06141900883866213
+783	#9edae5	783 - Road motor vehicles, n.e.s.	-383.321	-161.16165	0.0558273422263857
+784	#9edae5	784 - Parts and accessories, n.e.s. of the motor vehicles falling within heading 722, 781, 782 or 783	-477.7023	-181.2307	0.06364411711678493
+785	#9edae5	785 - Motorcycles, motor scooters and other cycles, motorized and non-motorized; invalid carriages	-177.12589	-114.90423	0.08122574475562398
+786	#9edae5	786 - Trailers and other vehicles, not motorized, n.e.s. and specially designed and equipped transport containers	-254.02487	-46.721138	0.06332523713637989
+791	#9edae5	791 - Railway vehicles (including hovertrains) and associated equipment	-284.2993	-107.783966	0.08609728157279171
+792	#9edae5	792 - Aircraft and associated equipment, and parts thereof, n.e.s.	-20.527512	-471.86227	0.062858975044019
+793	#9edae5	793 - Ships, boats (including hovercraft) and floating struc tures	-85.30676	-1.6971669	0.03745182467834569
+812	#5493c9	812 - Sanitary, plumbing, heating, lighting fixtures and fittings, n.e.s.	-172.95518	-15.811148	0.08542273432731423
+821	#5493c9	821 - Furniture and parts thereof	16.347076	-6.7510643	0.05920894914250896
+831	#5493c9	831 - Travel goods (e.g., trunks, suit-cases, hat-boxes, travelllng-bags, rucksacks), shopping bags, handbags, satchels, brief-cases, wallets, purses, toilet-cases, tool-cases, tobacco poaches, sheaths, cases, boxes (e.g. for arms, musical instruments,  binoculars, jewellery, bottles, collars, footwear, brushes) and similar containers, of leather, or of composition leather, of vulcanized fibre, of artificial plastic sheeting, of paperboard or of textile fabric	-42.10965	104.829704	0.0644300449710269
+842	#5493c9	842 - Outer garments, men's and boys of textile fabrics (other than knitted or crocheted goods)	77.09018	133.74352	0.04804014424674447
+843	#5493c9	843 - Outer garments, women's, girls' and infants', of textile fabrics (other than knitted or crocheted goods)	70.78739	171.38704	0.04804014424674447
+844	#5493c9	844 - Under garments of textile fabrics (other than knitted or crocheted)	103.33518	96.7029	0.04804014424674447
+845	#5493c9	845 - Outer garments and other articles, knitted or crocheted, not elastic nor rubberized	30.547842	111.87025	0.059318474756804795
+846	#5493c9	846 - Under garments, knitted or crocheted	17.995869	167.35666	0.057489375654722945
+847	#5493c9	847 - Clothing accessories, of textile fabrics, n.e.s.	-19.190212	160.98775	0.06084533400580738
+848	#5493c9	848 - Articles of apparml and clothing accessories, of leather or of composition leather	65.99077	98.08354	0.043058082030977364
+851	#5493c9	851 - Footwear	43.774605	145.17996	0.030845969212141965
+871	#5493c9	871 - Optical instruments and apparatus	-114.58864	-88.99716	0.07431534860587391
+872	#5493c9	872 - Medical instruments and appliances, n.e.s.	-417.42252	-152.20163	0.07656853877882869
+873	#5493c9	873 - Meters and counters, n.e.s.	-424.69003	-76.377846	0.10354373688225302
+874	#5493c9	874 - Measuring, checking, analysing and controlling instruments and apparatus, n.e.s.; parts and accessories, n.e.s. of the  instruments end apparatus of groups 873 and 874	-437.20386	-43.0137	0.1061455864116223
+881	#5493c9	881 - Photographic apparatus and equipment, n.e.s.	-244.33623	-217.27692	0.09834419963812592
+882	#5493c9	882 - Photographic and cinematographic supplies	-346.65454	-179.3042	0.09136695100440821
+883	#5493c9	883 - Cinematograph film, exposed and developed, whether or not incorporating sound track or consisting only of sound track, negative or positive	73.47491	27.244448	-0.003028762088381026
+884	#5493c9	884 - Optical goods n.e.s.	-281.17508	-220.34904	0.10103239730916146
+885	#5493c9	885 - Watches and clocks	-446.53558	-285.8259	0.08435565672381612
+892	#5493c9	892 - Printed matter	-39.919964	36.974022	0.06481809563751169
+893	#5493c9	893 - Articles, n.e.s. of materials of the kinds described in division 58	-167.7031	22.486511	0.08818877327752714
+894	#5493c9	894 - Baby carriages, toys, games and sporting goods	-145.0127	50.73136	0.06312420328593285
+895	#5493c9	895 - Office and stationary supplies, n.e.s.	-78.65487	108.311035	0.07215853378020391
+896	#5493c9	896 - Works of art, collectors' pieces and antiques	170.30807	191.77176	0.018777099497333385
+897	#5493c9	897 - Jewellery, goldsmiths' and silversmiths' wares, and other articles of precious or semi-preclous materials, n.e.s.	-99.56373	78.423935	0.08294043395879139
+898	#5493c9	898 - Musical instruments and parts and accessories thereof (including phonograph records and the like)	-247.00536	-153.83557	0.06764914734310248
+899	#5493c9	899 - Other miscellaneous manufactured articles, n.e.s.	-48.359905	139.49509	0.06572783525661043
+941	#9c9a87	941 - Animals, live, n.e.s., (including zoo animals, pets, insects, etc)	601.02216	298.21478	-0.04963042137218597
+951	#9c9a87	951 - Armoured fighting vehicles, war firearms, ammunition, parts, n.e.s.	-417.0132	-116.13221	0.10282524186122238
+961	#9c9a87	961 - Coin (other than gold coin), not being legal tender	-118.27372	358.804	-0.048125673694190844

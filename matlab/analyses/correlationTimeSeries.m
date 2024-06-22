@@ -1,6 +1,6 @@
 function correlationTimeSeries()
 
-global pp ap dataStruct
+global pp
 announceFunction()
 
 %========================================================================%

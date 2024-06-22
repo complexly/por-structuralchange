@@ -1,5 +1,5 @@
 function analyzeRCA_distribution()
-global pp ap
+global pp
 announceFunction()
 
 %========================================================================%
@@ -8,7 +8,7 @@ announceFunction()
 
 % Load data
 if true
-   load('../data/rcavector.mat')
+   load('./save/rcavector.mat')
 end
 
 % Get distribution of raw RCAs
