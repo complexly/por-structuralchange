@@ -9,12 +9,10 @@ announceFunction()
 %====================================================================%
 % Load edges (proximities)
 load('./save/mincop_proximity.mat')
-%load('adjmat.mat')
-%pcolor(full(adjmat))
 
 % Load node attributes
 fid = fopen('./save/nodes_with_xy.tsv');
-[fileContents,position] = textscan(fid,'%s%s%s%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
+fileContents = textscan(fid,'%s%s%s%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
 fclose(fid);
 
 SITCcode_3d = fileContents{1};
@@ -22,7 +20,7 @@ nodeColors  = fileContents{2};
 nodeNames   = fileContents{3};
 node_xloc   = fileContents{4};
 node_yloc   = fileContents{5};
-node_PCI    = fileContents{6};
+% node_PCI    = fileContents{6};
 
 % Pull out basic data
 n           = length(SITCcode_3d);
@@ -47,18 +45,18 @@ groupLabels = str2num(S(:,1));
 nGroups     = numel(unique(groupLabels));
 
 [uniqueColors,~,nodeColorIndices] = unique(nodeColors, 'stable');
-nodeColorMap = [
-   51  0 0
-   84  147 201
-   110 69 30
-   113 20 75
-   156 154 135
-   158 218 229
-   214 96 17
-   255 0 0
-   255 196 28
-   255 233 153
-   ]/255;
+% nodeColorMap = [
+%    51  0 0
+%    84  147 201
+%    110 69 30
+%    113 20 75
+%    156 154 135
+%    158 218 229
+%    214 96 17
+%    255 0 0
+%    255 196 28
+%    255 233 153
+%    ]/255;
 nodeColorMap2 = [
    126 205 81
    160  230 152
@@ -117,9 +115,9 @@ nodeSizeFunction    = datamapping(mappingType, dataValues, functionValues, expon
 markerLineWidth     = 0.3;
 
 % Node face color mapping
-Mcolors             = MatlabColors;
+% Mcolors             = MatlabColors;
 %nodeFaceColorMap    = 0.55*[1 1 1];     %Mcolors(1:nGroups,:) 0.5*[1 1 1]
-nodeFaceColorMap    = nodeColorMap;
+% nodeFaceColorMap    = nodeColorMap;
 
 % Node edge color mapping
 nodeEdgeColor       = [1 1 1]; %Mcolors(5,:) w
@@ -157,10 +155,7 @@ exponent            = 3;
 edgeColorFunction   = datamapping(mappingType, dataValues, functionValues, exponent);
 nColors             = 100;
 
-%edgeColorMap        = makeColorMap(nColors, [0 129 102]/255, [1 1 1]);
-%edgeColorMap        = makeColorMap(nColors, [0 0 1], [1 1 1]);
 edgeColorMap        = makeColorMap(nColors, 0.5*[1 1 1], [1 1 1]);
-%edgeColorMap        = makeColorMap(nColors, 'summer');   %autumn spring summer winter copper
 edgeColorMap        = edgeColorMap(end:-1:1, :);
 
 
@@ -168,7 +163,7 @@ edgeColorMap        = edgeColorMap(end:-1:1, :);
 % Pre-compute appearance mappings
 %====================================================================%
 % Compute node mappings
-nodeFaceColorList = nodeFaceColorMap( groupLabels, : );
+% nodeFaceColorList = nodeFaceColorMap( groupLabels, : );
 nodeSizeList      = nodeSizeFunction( nodeSizes ) * markerBaseSize;
 
 % Compute edge mappings
@@ -259,36 +254,20 @@ if drawLinks
       ytarget = ylocs(iTarget);
       
       % Draw edge
-      %iEdge
       edgeWidth   = edgeWidthMatrix(iTarget,iSource);
       edgeOpacity = edgeOpacityMatrix(iTarget,iSource);
       edgeColor   = edgeColorMap(edgeColorIndices(iTarget,iSource), :);
-      %pause
       patchline([xsource xtarget],[ysource ytarget], 'LineWidth',edgeWidth, 'EdgeAlpha',edgeOpacity, 'EdgeColor',edgeColor);
    end
 end
 
-
-%override temporarily
-[~,~,IC] = unique(nodeColors);
-
 % Plot nodes
 colormap(gca,nodeColorMap2)
 
-%theNodes = gscatter(xlocs,ylocs,groupLabels,nodeColorMap,'s',nodeSizeList);
 scatterGroupHandles = [];
 for iGroup = 1:nGroups
-   %mask = (IC == iGroup);
-   %theNodes = scatter(xlocs(mask),ylocs(mask),nodeSizeList(mask),nodeColors(mask),'filled');
-   
    mask = (groupLabels == iGroup);
    theNodes = scatter(xlocs(mask),ylocs(mask),nodeSizeList(mask),nodeColorIndices(mask),'filled');
-   
-   %iGroup
-   %table(SITCcode_3d(mask), nodeNames(mask), node_PCI(mask))
-   %0pause
-   
-   %text(xlocs(mask),ylocs(mask), SITCcode_3d(mask))
    set(theNodes, 'Marker',nodeMarker, 'LineWidth',markerLineWidth, 'MarkerEdgeColor',nodeEdgeColor, 'MarkerEdgeAlpha',nodeEdgeOpacity)
    scatterGroupHandles = [scatterGroupHandles theNodes];
 end
@@ -314,11 +293,7 @@ end
 
 % Refine
 set(gca, 'Box','on')
-%set(gca, 'XLim',xLim)
-%set(gca, 'YLim',yLim)
 set(gca, 'DataAspectRatio', [1 1 1])
-%set(gca, 'XTick',[])
-%set(gca, 'YTick',[])
 set(gca, 'FontSize',fontSize)
 
 set(gca, 'Visible','off')
@@ -342,8 +317,6 @@ if pp.saveFigures
    savemode  = '2014b';
    %save_image(h, fileName, savemode)
    
-   %set(gca, 'Visible','on')
-   
-   % SAVE MANUALLY as eps then convert to pdf.  Not sure why manual save is necessary.
+   % SAVE MANUALLY as eps then convert to pdf.
 end
 

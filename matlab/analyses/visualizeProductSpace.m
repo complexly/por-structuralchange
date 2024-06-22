@@ -8,53 +8,28 @@ announceFunction()
 %====================================================================%
 % Load edges (proximities)
 load('./save/mincop_proximity.mat')
-%load('adjmat.mat')
-%pcolor(full(adjmat))
 
 % Load node attributes
 fid = fopen('./save/nodes_with_xy.tsv');
-[fileContents,position] = textscan(fid,'%s%s%s%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
+fileContents = textscan(fid,'%s%s%s%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
 fclose(fid);
 
 SITCcode_3d = fileContents{1};
-nodeColor   = fileContents{2};
+% nodeColor   = fileContents{2};
 nodeNames   = fileContents{3};
 node_xloc   = fileContents{4};
 node_yloc   = fileContents{5};
-node_PCI    = fileContents{6};
+% node_PCI    = fileContents{6};
 
 n           = length(SITCcode_3d);
 A           = mincop_proximity;
 groupLabels = ones(n,1);
 nodeSizes   = ones(n,1);
-nGroups     = numel(unique(nodeSizes));
+% nGroups     = numel(unique(nodeSizes));
 
 % Add a tiny amount to each link to avoid absolute zeros, which will screw
 % up the color mapping
 A = A + 1e-6;
-
-%====================================================================%
-% Generate fake network
-%====================================================================%
-% n = 35;
-% A = wblrnd(1,0.6, [n n]);
-% nodeNames = num2str([1:n]');
-% nGroups = 5;
-% groupLabels = randi(5,[n 1]);
-% nodeSizes = sum(A);
-
-
-%====================================================================%
-% Function start
-%====================================================================%
-% Reasons why I'm going to plot the network with my own tools:  Matlab's
-% network drawing tools only allow for color mapping of links and nodes.
-% They do not allow for example
-%
-%    -link opacity mapping
-%    -link edge width mapping
-%    -node size mapping
-%    -etc. etc.
 
 %====================================================================%
 % General appearance parameters
@@ -81,7 +56,7 @@ nodeSizeFunction    = datamapping(mappingType, dataValues, functionValues, expon
 markerLineWidth     = 0.3;
 
 % Node face color mapping
-Mcolors             = MatlabColors;
+% Mcolors             = MatlabColors;
 nodeFaceColorMap    = 0.55*[1 1 1];     %Mcolors(1:nGroups,:) 0.5*[1 1 1]
 
 % Node edge color mapping
@@ -120,12 +95,7 @@ exponent            = 3;
 edgeColorFunction   = datamapping(mappingType, dataValues, functionValues, exponent);
 nColors             = 100;
 
-%edgeColorMap        = makeColorMap(nColors, [0 129 102]/255, [1 1 1]);
-%edgeColorMap        = makeColorMap(nColors, [0 0 1], [1 1 1]);
 edgeColorMap        = makeColorMap(nColors, [16 88 170]/255, [1 1 1]);
-%edgeColorMap        = makeColorMap(nColors, [0 143 0]/255, [1 1 1]);
-%edgeColorMap        = makeColorMap(nColors, [1 0.6 0], [1 1 1]);
-%edgeColorMap        = makeColorMap(nColors, 'copper');   %autumn spring summer winter copper
 edgeColorMap        = edgeColorMap(end:-1:1, :);
 
 
@@ -200,10 +170,6 @@ Idraw               = Idraw(Isort);
 [Isources,Itargets] = ind2sub(size(A), Idraw);
 edgeList            = [Isources Itargets];
 
-figure(8) 
-semilogy(sort(A(:),'descend'), [1:n^2])
-xlabel('Proximity')
-ylabel('Edge rank')
 
 
 %====================================================================%
@@ -233,11 +199,9 @@ if drawLinks
       ytarget = ylocs(iTarget);
       
       % Draw edge
-      %iEdge
       edgeWidth   = edgeWidthMatrix(iTarget,iSource);
       edgeOpacity = edgeOpacityMatrix(iTarget,iSource);
       edgeColor   = edgeColorMap(edgeColorIndices(iTarget,iSource), :);
-      %pause
       patchline([xsource xtarget],[ysource ytarget], 'LineWidth',edgeWidth, 'EdgeAlpha',edgeOpacity, 'EdgeColor',edgeColor);
       
       % Draw arrow
@@ -270,13 +234,8 @@ end
 
 % Refine
 set(gca, 'Box','on')
-%set(gca, 'XLim',xLim)
-%set(gca, 'YLim',yLim)
 set(gca, 'DataAspectRatio', [1 1 1])
-%set(gca, 'XTick',[])
-%set(gca, 'YTick',[])
 set(gca, 'FontSize',fontSize)
-
 set(gca, 'Visible','off')
 
 % Plot colorbar
@@ -298,71 +257,6 @@ if pp.saveFigures
    savemode  = '2014b';
    %save_image(h, fileName, savemode)
    
-   %set(gca, 'Visible','on')
-   
-   % SAVE MANUALLY.  Not sure why this is necessary.
+   % SAVE MANUALLY.
 end
 end
-
-%====================================================================%
-% Draw matrix
-%====================================================================%
-% Additional or customized appearance parameters
-xLim = [-1 1];
-yLim = [-1 1];
-
-% Setup figure
-newFigure( [mfilename,'.matrix'] );
-clf
-figpos = get(gcf, 'Position');
-set(gcf, 'Position',[figpos(1) figpos(2) 560   420])
-
-% Setup axes
-axes('Position',[0.15    0.15    0.7    0.7])
-set(gca, 'ClippingStyle','rectangle'); %clips line at axes borders
-
-% Plot
-showmatrix(A)
-
-% Set colormap
-colorIndices = ceil(edgeColorFunction( linspace(min(A(:)),max(A(:)),nColors) ) * nColors);
-edgeColorMap_rescampled = edgeColorMap(colorIndices,:);
-colormap(gca,edgeColorMap_rescampled)
-figureChildren = get(gcf,'Children');
-figureChildren(1).Limits = [0 1];
-
-% Refine
-set(gca, 'Box','on')
-%set(gca, 'XScale','log')
-%set(gca, 'YScale','log')
-%set(gca, 'XLim',xLim)
-%set(gca, 'YLim',yLim)
-set(gca, 'DataAspectRatio', [1 1 1])
-%set(gca, 'XTick',[])
-%set(gca, 'YTick',[])
-%consistentTickPrecision(gca,'x',1)
-%consistentTickPrecision(gca,'y',1)
-set(gca, 'FontSize',pp.fontSize)
-xlabel('SITC code')
-ylabel('SITC code')
-
-% Save
-if pp.saveFigures
-   h        = gcf;
-   folder   = pp.outputFolder;
-   fileName = 'productspace_PCI';
-   fileName = fullfile(folder, fileName);
-   savemode = 'epsc';
-   save_image(h, fileName, savemode)
-end
-
-
-%Outstanding questions
-%-why are there proximities greater than 1?
-
-%https://www.mathworks.com/matlabcentral/answers/307318-does-matlab-have-a-nonlinear-colormap-how-do-i-make-one
-%https://www.mathworks.com/matlabcentral/answers/29425-nonlinear-colour-axis-on-colorbar
-%https://www.mathworks.com/help/matlab/colors-1.html
-
-
-

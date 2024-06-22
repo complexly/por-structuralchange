@@ -35,18 +35,6 @@ A = A + 1e-6;
 
 
 %====================================================================%
-% Function start
-%====================================================================%
-% Reasons why I'm going to plot the network with my own tools:  Matlab's
-% network drawing tools only allow for color mapping of links and nodes.
-% They do not allow for example
-%
-%    -link opacity mapping
-%    -link edge width mapping
-%    -node size mapping
-%    -etc. etc.
-
-%====================================================================%
 % General appearance parameters
 %====================================================================%
 fontSize            = 12;
