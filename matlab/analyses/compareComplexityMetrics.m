@@ -12,9 +12,9 @@ announceFunction()
 % diversity        = countryData.divesity;
 run_filter_robustness_check = false;
 if run_filter_robustness_check
-   load(fullfile(pp.dataFolder, 'robustness_check/metric2016.mat'))
+   load(fullfile(pp.saveFolder, 'robustness_check/metric2016.mat'))
 else
-   load(fullfile(pp.dataFolder, 'metric2016.mat'))
+   load(fullfile(pp.saveFolder, 'metric2016.mat'))
 end
 fitness2016 = struct1.fitness2016;
 eci2016     = struct1.eci2016;

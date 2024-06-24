@@ -3,12 +3,12 @@ global pp
 
 % Load data set 1
 if ~pp.HS_robustness_check
-   load(fullfile(pp.dataFolder, 'cntryyear_pmc.mat'));  % loads struct1
-   load(fullfile(pp.dataFolder, 'fig5b.mat'));          % loads Rcpt (+ others)
+   load(fullfile(pp.saveFolder, 'cntryyear_pmc.mat'));  % loads struct1
+   load(fullfile(pp.saveFolder, 'fig5b.mat'));          % loads Rcpt (+ others)
    mat_file_name = 'countryData.mat';
 else
-   load(fullfile(pp.dataFolder, 'HS_comparison/cntryyear_pmc_hs.mat')) % loads struct1
-   load(fullfile(pp.dataFolder, 'HS_comparison/rcpt.mat'))             % loads Rcpt
+   load(fullfile(pp.saveFolder, 'HS_comparison/cntryyear_pmc_hs.mat')) % loads struct1
+   load(fullfile(pp.saveFolder, 'HS_comparison/rcpt.mat'))             % loads Rcpt
    mat_file_name = 'countryData_HS.mat';
 end
 
@@ -58,5 +58,5 @@ diversity   = sum( Rcpt >= 1 )';
 countryData = table(regionCodes, years, GDPpc, diversity0, diversity, A, A_m, A_c, ECIstar, ECIstar_m, ECIstar_c, ECI, gini, shannon, hhi, category);
 
 % Store for access by analysis script
-file_name = fullfile('./save/', mat_file_name);
+file_name = fullfile(pp.saveFolder, mat_file_name);
 save(file_name,'countryData')

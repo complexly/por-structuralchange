@@ -7,11 +7,10 @@ announceFunction()
 % Load network data
 %====================================================================%
 % Load edges (proximities)
-load('./save/mincop_proximity.mat')
+load(fullfile(pp.saveFolder, 'mincop_proximity.mat'))
 
 % Load node attributes
-%fid = fopen('./save/nodes_with_xy.tsv');
-fid = fopen('./save/nodes_with_xy_3rd.tsv');
+fid = fopen(fullfile(pp.saveFolder,'nodes_with_xy_3rd.tsv'));
 fileContents = textscan(fid,'%s%s%s%f%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
 fclose(fid);
 

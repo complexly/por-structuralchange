@@ -8,7 +8,7 @@ announceFunction()
 % Load data
 %========================================================================%
 % Load data
-load('./save/countryData.mat')
+load(fullfile(pp.saveFolder, 'countryData.mat'))
 ECI              = countryData.ECI;
 ECIstar          = countryData.ECIstar;
 

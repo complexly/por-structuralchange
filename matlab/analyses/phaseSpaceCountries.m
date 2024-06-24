@@ -8,9 +8,9 @@ announceFunction()
 %========================================================================%
 % Load
 if ~pp.HS_robustness_check
-   load('./save/countryData.mat')
+   load(fullfile(pp.saveFolder, 'countryData.mat'))
 else
-   load('./save/countryData_HS.mat')
+   load(fullfile(pp.saveFolder, 'countryData_HS.mat'))
 end
 
 

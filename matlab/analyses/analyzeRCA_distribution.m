@@ -8,7 +8,7 @@ announceFunction()
 
 % Load data
 if true
-   load('./save/rcavector.mat')
+   load(fullfile(pp.saveFolder, 'rcavector.mat'))
 end
 
 

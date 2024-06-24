@@ -9,7 +9,7 @@ announceFunction()
 % Load
 % if ~pp.HS_robustness_check
 if true
-   load('./save/countryData.mat')
+   load(fullfile(pp.saveFolder, 'countryData.mat'))
    Delta_t     = 20;   %amount of time averaging to do
 
    % Important: For the robustness check, impose a minimum year on the
@@ -21,7 +21,7 @@ if true
       countryData = countryData(countryData.years >= 1995, :);
    end
 else
-   load('./save/countryData_HS.mat')
+   load(fullfile(pp.saveFolder, 'countryData_HS.mat'))
    Delta_t     = 20;   %amount of time averaging to do
 end
 
@@ -189,9 +189,9 @@ if false
    
    fitType         = 'lowess';
    speedFitObj     = fit(Xfit, Zfit, fitType);
-   save('./save/speedFit.mat','speedFitObj')
+   save(fullfile(pp.saveFolder, 'speedFit.mat'), 'speedFitObj')
 else
-   load('./save/speedFit.mat')
+   load(fullfile(pp.saveFolder, 'speedFit.mat'))
 end
 
 

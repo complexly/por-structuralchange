@@ -1,17 +1,17 @@
-% Main file for paper.  Everything up to "ANALYSES" is the common stem, and
-% then what follows are individual analyses that can be switched on or off.
+% Main file for paper.  Everything up to "ANALYSES" is the common stem, below which are individual analyses that can be switched on or off.
 clear
-addpath('../python/data')
-addpath('./save')
+addpath('../data')
+addpath('../save')
 addpath('./analyses')
 addpath('./tools')
 addpath('./tools/SubAxis')
 
 % Processing parameters
 global pp
-pp.dataFolder           = '../python/data/';
-pp.outputFolder         = './output';
-pp.saveFigures          = false;
+pp.dataFolder           = '../data/';
+pp.saveFolder           = '../save/';
+pp.outputFolder         = '../out';
+pp.saveFigures          = true;
 pp.HS_robustness_check  = false;
 pp.fontSize             = 16;
 
@@ -30,6 +30,7 @@ tic
 if true; preprocessCountryData(); end
 
 
+% ANALYSES
 % Main (+ some SI)
 if true; compareComplexityMetrics(); end
 

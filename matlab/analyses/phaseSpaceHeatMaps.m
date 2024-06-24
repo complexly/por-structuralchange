@@ -7,9 +7,9 @@ announceFunction()
 %========================================================================%
 % Load
 if ~pp.HS_robustness_check
-   load('./save/countryData.mat')
-   diversity_countours_file = './save/logDiversityFit.mat';
-   gdp_contours_files = './save/loggdpFit.mat';
+   load(fullfile(pp.saveFolder, 'countryData.mat'))
+   diversity_countours_file = fullfile(pp.saveFolder,'logDiversityFit.mat');
+   gdp_contours_files = fullfile(pp.saveFolder,'loggdpFit.mat');
 
    % Notes on slist:
    %   - These numbers give the fractional distance [0 to 1] along the full
@@ -25,9 +25,9 @@ if ~pp.HS_robustness_check
    sList_GDP   = [nan nan 0.65 0.635 0.62 0.615 0.61 0.5 0.60 0.61];
    sList_diversity   = [nan nan 0.45 0.45 0.45 0.45 0.44];
 else
-   load('./save/countryData_HS.mat')
-   diversity_countours_file = './save/logDiversityFit_HS.mat';
-   gdp_contours_files = './save/loggdpFit_HS.mat';
+   load(fullfile(pp.saveFolder, 'countryData_HS.mat'))
+   diversity_countours_file = fullfile(pp.saveFolder, 'logDiversityFit_HS.mat');
+   gdp_contours_files = fullfile(pp.saveFolder, 'loggdpFit_HS.mat');
 
    sList_GDP   = [nan 0.61 0.66 0.65 0.625 nan 0.64 nan nan nan 0.775 nan 0.735];
    sList_diversity   = [nan 0.285 nan 0.55 0.55 nan 0.55 0.6];

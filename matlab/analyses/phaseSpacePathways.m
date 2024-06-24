@@ -8,7 +8,7 @@ announceFunction()
 % Load
 % if ~pp.HS_robustness_check
 if true
-   load('./save/countryData.mat')
+   load(fullfile(pp.saveFolder, 'countryData.mat'))
 
    % Important: For the robustness check, impose a minimum year on the
    % -SITC- data to get an apples-to-apples comparison between SITC and HS
@@ -19,7 +19,7 @@ if true
       countryData = countryData(countryData.years >= 1995, :);
    end
 else
-   load('./save/countryData_HS.mat')
+   load(fullfile(pp.saveFolder, 'countryData_HS.mat'))
 
    % Sub-analysis: Why do the quiver and streamline plots look noisier than
    % with SITC data?
