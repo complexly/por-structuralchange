@@ -7,8 +7,7 @@ announceFunction()
 % Load data
 %========================================================================%
 % Load
-% if ~pp.HS_robustness_check
-if true
+if ~pp.HS_robustness_check
    load(fullfile(pp.saveFolder, 'countryData.mat'))
    Delta_t     = 20;   %amount of time averaging to do
 

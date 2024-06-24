@@ -6,8 +6,7 @@ announceFunction()
 % Load data
 %========================================================================%
 % Load
-% if ~pp.HS_robustness_check
-if true
+if ~pp.HS_robustness_check
    load(fullfile(pp.saveFolder, 'countryData.mat'))
 
    % Important: For the robustness check, impose a minimum year on the

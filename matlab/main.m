@@ -11,7 +11,7 @@ global pp
 pp.dataFolder           = '../data/';
 pp.saveFolder           = '../save/';
 pp.outputFolder         = '../out';
-pp.saveFigures          = true;
+pp.saveFigures          = false;
 pp.HS_robustness_check  = false;
 pp.fontSize             = 16;
 
