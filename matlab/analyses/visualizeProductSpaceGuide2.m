@@ -12,7 +12,7 @@ load(fullfile(pp.saveFolder, 'mincop_proximity.mat'))
 
 % Load node attributes
 fid = fopen(fullfile(pp.saveFolder,'nodes_with_xy_3rd.tsv'));
-fileContents = textscan(fid,'%s%s%s%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
+fileContents = textscan(fid,'%s%s%s%f%f%f%f', 'Headerlines',1, 'Delimiter','\t', 'EndOfLine','\r\n');
 fclose(fid);
 
 SITCcode_3d = fileContents{1};
