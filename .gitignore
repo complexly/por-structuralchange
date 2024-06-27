@@ -13,7 +13,6 @@ Output.txt
 .venv/
 __pycache__/
 _archive/
-output/
 
 # downloads
 country_sitcproduct4digit_year.dta
