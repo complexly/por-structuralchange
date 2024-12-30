@@ -7,10 +7,13 @@ Output.txt
 *.pdf
 *.npy
 *.pyc
+*.asv
 
 # folders
 .ipynb_checkpoints/
 .venv/
+.vscode/
+.mypy_cache/
 __pycache__/
 _archive/
 
