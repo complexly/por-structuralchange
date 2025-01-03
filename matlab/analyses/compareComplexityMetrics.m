@@ -7,9 +7,13 @@ announceFunction()
 %========================================================================%
 % Load data
 %========================================================================%
-% Load data
-% ECI              = countryData.ECI;
-% diversity        = countryData.divesity;
+% Workaround: First load GDP data to get correlation with X2
+load(fullfile(pp.saveFolder, 'countryData.mat'))
+
+% Grab just 2016
+countryData = countryData(countryData.years == 2016,:);
+
+% Load metric data
 run_filter_robustness_check = false;
 if run_filter_robustness_check
    load(fullfile(pp.saveFolder, 'robustness_check/metric2016.mat'))
@@ -33,9 +37,93 @@ ECIstar_p   = struct1.proj_p;
 ECIstar_m   = struct1.proj_m;
 ECIstar_c   = struct1.proj_c;
 
-% Compute all cross correlations between metrics
-tickLabels = {'Diversity $d$','Fitness','$X_1 d$','Prod. Ability','TCS entropic','$A$','$A^M$','$A^C$', 'ECI','$b$ (ECI*)','$b^M$ (ECI*$^M$)','$b^C$ (ECI*$^C$)','$X_2 / \sqrt{d}$', 'GENEPY', 'Collective knowhow'};
-dataMatrix = [diversity; fitness2016; X1 .* diversity; prodAbility; teza_hc; A_p; A_m; A_c;  eci2016; ECIstar_p; ECIstar_m; ECIstar_c; X2 ./ sqrt(diversity); genepy; collectKnowhow]';
+% Compute cross correlations between metrics
+location = 'si'; % main or SI
+if strcmp(location, 'main')
+   tickLabels = {
+      'Diversity $d$',
+      'Fitness',
+      '$X_1 d$',
+      'Prod. Ability',
+      'TCS entropic',
+      '$A$',
+      '$A^M$',
+      '$A^C$',
+      'ECI',
+      '$b$ (ECI*)',
+      '$b^M$ (ECI*$^M$)',
+      '$b^C$ (ECI*$^C$)',
+      '$X_2 / \sqrt{d}$',
+      'GENEPY',
+      'Collective knowhow'
+      };
+   dataMatrix = [
+      diversity; 
+      fitness2016; 
+      X1 .* diversity; 
+      prodAbility; 
+      teza_hc; 
+      A_p; 
+      A_m; 
+      A_c;  
+      eci2016; 
+      ECIstar_p; 
+      ECIstar_m; 
+      ECIstar_c; 
+      X2 ./ sqrt(diversity); 
+      genepy; 
+      collectKnowhow
+      ]';
+   braceX0 = -3.7;
+   xNudge1 = 1.2;
+   xNudge2 = 6.7;
+   n_div_like = 8;
+   n_comp_like = 5;
+else
+   tickLabels = {
+      'Diversity $d$',
+      'Fitness',
+      '$X_1 d$',
+      'Prod. Ability',
+      'TCS entropic',
+      '$A$',
+      '$A^M$',
+      '$A^C$',
+      'ECI',
+      '$b$ (ECI*)',
+      '$b^M$ (ECI*$^M$)',
+      '$b^C$ (ECI*$^C$)',
+      '$X_2 / \sqrt{d}$',
+      '$X_2$',
+      'GENEPY',
+      '$X_1$',
+      'Collective knowhow'
+      };
+   dataMatrix = [
+      diversity; 
+      fitness2016; 
+      X1 .* diversity; 
+      prodAbility; 
+      teza_hc; 
+      A_p; 
+      A_m; 
+      A_c;  
+      eci2016; 
+      ECIstar_p; 
+      ECIstar_m; 
+      ECIstar_c; 
+      X2 ./ sqrt(diversity); 
+      X2;
+      genepy; 
+      X1; 
+      collectKnowhow
+      ]';
+   n_div_like = 8;
+   n_comp_like = 6;
+   braceX0 = -4.3;
+   xNudge1 = 1.4;
+   xNudge2 = 7.6;
+end
 correlationMeasure = 'Pearson'; %Pearson Spearman
 C3          = corr(dataMatrix, 'type',correlationMeasure);
 
@@ -44,11 +132,23 @@ fitness_A_pearson  = corr(fitness2016',             A_p',       'type','Pearson'
 prodAbil_A_pearson = corr(prodAbility',             A_p',       'type','Pearson');
 X1mod_A_pearson    = corr((X1 .* diversity)',       A_p',       'type','Pearson');
 X2mod_ECIstar_pearson  = corr((X2 ./ sqrt(diversity))', ECIstar_p', 'type','Pearson');
+X1_GENEPY_pearson = corr(X1', genepy', 'type','Pearson');
+X1_diversity_pearson = corr(X1', diversity', 'type','Pearson');
+X1_Ap_pearson = corr(X1', A_p', 'type','Pearson');
+X2_GENEPY_pearson = corr(X2', genepy', 'type','Pearson');
+X2_bp_pearson = corr(X2', ECIstar_p', 'type','Pearson');
+Ap_diversity_pearson = corr(A_p', diversity', 'type','Pearson');
 
 fitness_A_spearman  = corr(fitness2016',             A_p',       'type','Spearman');
 prodAbil_A_spearman = corr(prodAbility',             A_p',       'type','Spearman');
 X1mod_A_spearman    = corr((X1 .* diversity)',       A_p',       'type','Spearman');
 X2mod_ECIstar_spearman  = corr((X2 ./ sqrt(diversity))', ECIstar_p', 'type','Spearman');
+X1_GENEPY_spearman = corr(X1', genepy', 'type','Spearman');
+X1_diversity_spearman = corr(X1', diversity', 'type','Spearman');
+X1_Ap_spearman = corr(X1', A_p', 'type','Spearman');
+X2_GENEPY_spearman = corr(X2', genepy', 'type','Spearman');
+X2_bp_spearman = corr(X2', ECIstar_p', 'type','Spearman');
+Ap_diversity_spearman = corr(A_p', diversity', 'type','Spearman');
 
 disp('Fitness correlations')
 disp(fitness_A_pearson)
@@ -68,6 +168,50 @@ disp(' ')
 disp('X2 correlations')
 disp(X2mod_ECIstar_pearson)
 disp(X2mod_ECIstar_spearman)
+
+disp('X1 correlations with GENEPY')
+disp(['Pearson: ',num2str(X1_GENEPY_pearson)])
+disp(['Spearman: ',num2str(X1_GENEPY_spearman)])
+
+disp(' ')
+disp('X2 correlations with GENEPY')
+disp(['Pearson: ',num2str(X2_GENEPY_pearson)])
+disp(['Spearman: ',num2str(X2_GENEPY_spearman)])
+
+disp(' ')
+disp('A^p correlations with diversity')
+disp(['Pearson: ',num2str(Ap_diversity_pearson)])
+disp(['Spearman: ',num2str(Ap_diversity_spearman)])
+
+disp(' ')
+disp('X1 correlations with diversity')
+disp(['Pearson: ',num2str(X1_diversity_pearson)])
+disp(['Spearman: ',num2str(X1_diversity_spearman)])
+
+% disp(' ')
+% disp('X1 correlations with A^p')
+% disp(['Pearson: ',num2str(X1_Ap_pearson)])
+% disp(['Spearman: ',num2str(X1_Ap_spearman)])
+% 
+% disp(' ')
+% disp('X2 correlations with b^p')
+% disp(['Pearson: ',num2str(X2_bp_pearson)])
+% disp(['Spearman: ',num2str(X2_bp_spearman)])
+
+GDPpc = countryData.GDPpc;
+bp_GDPpc_pearson = corr(ECIstar_p', GDPpc, 'type','Pearson', 'rows','complete');
+bp_GDPpc_spearman = corr(ECIstar_p', GDPpc, 'type','Spearman', 'rows','complete');
+X2_GDPpc_pearson = corr(X2', GDPpc, 'type','Pearson', 'rows','complete');
+X2_GDPpc_spearman = corr(X2', GDPpc, 'type','Spearman', 'rows','complete');
+disp(' ')
+disp('b^p correlations with GDPpc')
+disp(['Pearson: ',num2str(bp_GDPpc_pearson)])
+disp(['Spearman: ',num2str(bp_GDPpc_spearman)])
+
+disp(' ')
+disp('X2 correlations with GDPpc')
+disp(['Pearson: ',num2str(X2_GDPpc_pearson)])
+disp(['Spearman: ',num2str(X2_GDPpc_spearman)])
 
 
 
@@ -101,14 +245,14 @@ set(gca, 'Layer', 'top')
 set(gca, 'XTick',[1:length(tickLabels)], 'XTickLabel',tickLabels, 'XTickLabelRotation',45)
 set(gca, 'YTick',[1:length(tickLabels)], 'YTickLabel',tickLabels)
 set(gca, 'FontSize',fontSize)
-set(gca,'TickLabelInterpreter','latex')
+set(gca, 'TickLabelInterpreter','latex')
 
 % Draw braces
 set(gca, 'Clipping','off')
-braceX0    = -3.7;
+n_total = n_div_like + n_comp_like;
 braceY1    = 1 - 0.4;
-braceY2    = 8 + 0.4;
-braceY3    = 13 + 0.4;
+braceY2    = n_div_like + 0.4;
+braceY3    = n_total + 0.4;
 braceTop1  = [braceX0 braceY1];
 braceTop2  = [braceX0 braceY2];
 braceBot1  = [braceX0 braceY2+0.2];
@@ -118,11 +262,12 @@ drawbrace(braceTop1, braceTop2, braceWidth, 'Color', 'k', 'LineWidth',braceLineW
 drawbrace(braceBot1, braceBot2, braceWidth, 'Color', 'k', 'LineWidth',braceLineWidth);
 
 % Draw block labels
-xNudge  = -1.2;
 yLabel1 = (braceY1 + braceY2)/2;
-text(braceX0+xNudge, yLabel1, 'Diversity-like', 'FontSize',fontSize, 'HorizontalAlignment','right')
-text(-10.4,   10.4953, {'ECI','Composition-like'}, 'FontSize',fontSize, 'HorizontalAlignment','left')
-
+yLabel2 = (braceY2 + braceY3)/2 - 0.4047;
+brace_label_loc1 = [braceX0 - xNudge1, yLabel1];
+brace_label_loc2 = [braceX0 - xNudge2, yLabel2];
+text(brace_label_loc1(1), brace_label_loc1(2), 'Diversity-like', 'FontSize',fontSize, 'HorizontalAlignment','right')
+text(brace_label_loc2(1), brace_label_loc2(2), {'ECI','Composition-like'}, 'FontSize',fontSize, 'HorizontalAlignment','left')
 
 % Create colorbar limits
 set(gca, 'CLim',[0 1])
