@@ -11,7 +11,7 @@ global pp
 pp.dataFolder           = '../data/';
 pp.saveFolder           = '../save/';
 pp.outputFolder         = '../out';
-pp.saveFigures          = false;
+pp.saveFigures          = true;
 pp.HS_robustness_check  = false;
 pp.fontSize             = 16;
 
@@ -28,7 +28,8 @@ tic
 
 % Create countryData table and save to .mat file
 if true; preprocessCountryData(); end
-
+% if true; exportToStata2(); end # todo: eventually eliminate this and use
+% python
 
 % ANALYSES
 % Main (+ some SI)
