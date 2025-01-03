@@ -1,5 +1,5 @@
 function phaseSpaceMovement()
-global pp hdiversity
+global pp
 announceFunction()
 
 
