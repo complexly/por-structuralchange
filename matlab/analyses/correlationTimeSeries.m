@@ -123,23 +123,43 @@ function corr_matrix = reshape_data(T, yr)
 T_mod = T(T.year==yr,:); %get yr data
 T_mod = unstack(T_mod, 'corrcoef', 'metric2'); %form a matrix
 
+% labels = [
+%    {'kc'          }
+%    {'fitness_year'}
+%    {'x1d'         }
+%    {'ability'     }
+%    {'hc'          }
+%    {'avgrca_p'    }
+%    {'avgrca_m'    }
+%    {'avgrca_c'    }
+%    {'eci_year'    }
+%    {'proj_p'      }
+%    {'proj_m'      }
+%    {'proj_c'      }
+%    {'x2divsqrtd'  }
+%    {'genepy'      }
+%    {'fe'          }
+%    ];
+
 labels = [
-   {'kc'          }
-   {'fitness_year'}
+   {'diversity'          }
+   {'fitness'}
    {'x1d'         }
    {'ability'     }
    {'hc'          }
-   {'avgrca_p'    }
-   {'avgrca_m'    }
-   {'avgrca_c'    }
-   {'eci_year'    }
-   {'proj_p'      }
-   {'proj_m'      }
-   {'proj_c'      }
+   {'avgrca_p_1962'    }
+   {'avgrca_m_1962'    }
+   {'avgrca_c_1962'    }
+   {'eci'    } % was eci_year
+   {'proj_p_1962'      }
+   {'proj_m_1962'      }
+   {'proj_c_1962'      }
    {'x2divsqrtd'  }
    {'genepy'      }
    {'fe'          }
    ];
+
+
 
 % Set metric1 as the row names
 T_mod.Properties.RowNames = cellfun(@strip, table2cell(T_mod(:,'metric1')), 'UniformOutput', false);
