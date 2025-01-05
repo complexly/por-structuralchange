@@ -47,7 +47,7 @@ if true; analyzeRCA_distribution(); end
 
 % SI
 if true; eigenvalueSpectrum(); end
-if true; correlationTimeSeries(); end
+if true; correlationsOverTime(); end
 if true; phasePortrait(); end
 
 % Main network visualizations (these are more time-consuming)

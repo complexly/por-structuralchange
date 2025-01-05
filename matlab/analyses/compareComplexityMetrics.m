@@ -124,7 +124,7 @@ else
    xNudge1 = 1.4;
    xNudge2 = 7.6;
 end
-correlationMeasure = 'Pearson'; %Pearson Spearman
+correlationMeasure = 'Spearman'; %Pearson Spearman
 C3          = corr(dataMatrix, 'type',correlationMeasure);
 
 % Report particular correlations

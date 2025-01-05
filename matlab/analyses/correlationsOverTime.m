@@ -1,4 +1,4 @@
-function correlationTimeSeries()
+function correlationsOverTime()
 
 global pp
 announceFunction()
@@ -25,8 +25,25 @@ end
 % Additional or customized appearance parameters
 fontSize = 16;
 braceLineWidth = 1.5;
-tickLabels = {'Diversity $d$','Fitness','$X_1 d$','Prod. Ability','TCS entropic','$A$','$A^M$','$A^C$', 'ECI','$b$ (ECI*)','$b^M$ (ECI*$^M$)','$b^C$ (ECI*$^C$)','$X_2 / \sqrt{d}$', 'GENEPY', 'Collective knowhow'};
-
+tickLabels = {
+   'Diversity $d$',
+   'Fitness',
+   '$X_1 d$',
+   'Prod. Ability',
+   'TCS entropic',
+   '$A$',
+   '$A^M$',
+   '$A^C$',
+   'ECI',
+   '$b$ (ECI*)',
+   '$b^M$ (ECI*$^M$)',
+   '$b^C$ (ECI*$^C$)',
+   '$X_2 / \sqrt{d}$',
+   '$X_2$',
+   'GENEPY',
+   '$X_1$',
+   'Collective knowhow'
+   };
 year_list = [1966:10:2016];
 n_years = length(year_list);
 
@@ -71,7 +88,7 @@ for iyr = 1:n_years
       braceX0    = 0;
       braceY1    = 1 - 0.4;
       braceY2    = 8 + 0.4;
-      braceY3    = 13 + 0.4;
+      braceY3    = 14 + 0.4;
       braceTop1  = [braceX0 braceY1];
       braceTop2  = [braceX0 braceY2];
       braceBot1  = [braceX0 braceY2+0.2];
@@ -84,7 +101,7 @@ for iyr = 1:n_years
       xNudge  = -3;
       yLabel1 = (braceY1 + braceY2)/2;
       text(braceX0+xNudge, yLabel1, 'Diversity-like', 'FontSize',fontSize, 'HorizontalAlignment','right')
-      text(-16.5,   10.4953, {'ECI','Composition-like'}, 'FontSize',fontSize, 'HorizontalAlignment','left')
+      text(-18.7,   10.4953, {'ECI','Composition-like'}, 'FontSize',fontSize, 'HorizontalAlignment','left')
    end
 
    % Create colorbar
@@ -123,23 +140,6 @@ function corr_matrix = reshape_data(T, yr)
 T_mod = T(T.year==yr,:); %get yr data
 T_mod = unstack(T_mod, 'corrcoef', 'metric2'); %form a matrix
 
-% labels = [
-%    {'kc'          }
-%    {'fitness_year'}
-%    {'x1d'         }
-%    {'ability'     }
-%    {'hc'          }
-%    {'avgrca_p'    }
-%    {'avgrca_m'    }
-%    {'avgrca_c'    }
-%    {'eci_year'    }
-%    {'proj_p'      }
-%    {'proj_m'      }
-%    {'proj_c'      }
-%    {'x2divsqrtd'  }
-%    {'genepy'      }
-%    {'fe'          }
-%    ];
 
 labels = [
    {'diversity'          }
@@ -155,7 +155,9 @@ labels = [
    {'proj_m_1962'      }
    {'proj_c_1962'      }
    {'x2divsqrtd'  }
-   {'genepy'      }
+   {'xc2'}
+   {'genepy'}
+   {'xc1'}
    {'fe'          }
    ];
 
